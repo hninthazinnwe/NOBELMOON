@@ -1,0 +1,611 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="NobelMoonModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="NobelMoonModelStoreContainer">
+    <EntitySet Name="Authorization" EntityType="NobelMoonModel.Store.Authorization" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CarRentalBooking" EntityType="NobelMoonModel.Store.CarRentalBooking" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CarRentalDetail" EntityType="NobelMoonModel.Store.CarRentalDetail" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CarType" EntityType="NobelMoonModel.Store.CarType" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Class" EntityType="NobelMoonModel.Store.Class" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Company" EntityType="NobelMoonModel.Store.Company" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Currency" EntityType="NobelMoonModel.Store.Currency" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Hotel" EntityType="NobelMoonModel.Store.Hotel" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="HotelBooking" EntityType="NobelMoonModel.Store.HotelBooking" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="HotelRoom" EntityType="NobelMoonModel.Store.HotelRoom" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="IncomeType" EntityType="NobelMoonModel.Store.IncomeType" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Package" EntityType="NobelMoonModel.Store.Package" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PackageType" EntityType="NobelMoonModel.Store.PackageType" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PassportBooking" EntityType="NobelMoonModel.Store.PassportBooking" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PassportPerson" EntityType="NobelMoonModel.Store.PassportPerson" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PassportRequirement" EntityType="NobelMoonModel.Store.PassportRequirement" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PayforCredit" EntityType="NobelMoonModel.Store.PayforCredit" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PaymentTerm" EntityType="NobelMoonModel.Store.PaymentTerm" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Peroid" EntityType="NobelMoonModel.Store.Peroid" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="RequireLetter" EntityType="NobelMoonModel.Store.RequireLetter" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Role" EntityType="NobelMoonModel.Store.Role" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="RoomType" EntityType="NobelMoonModel.Store.RoomType" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Segment" EntityType="NobelMoonModel.Store.Segment" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Services" EntityType="NobelMoonModel.Store.Services" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ServicesOrRequirement" EntityType="NobelMoonModel.Store.ServicesOrRequirement" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Staff" EntityType="NobelMoonModel.Store.Staff" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TblUser" EntityType="NobelMoonModel.Store.TblUser" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TicketBooking" EntityType="NobelMoonModel.Store.TicketBooking" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TicketFlight" EntityType="NobelMoonModel.Store.TicketFlight" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TicketPassenger" EntityType="NobelMoonModel.Store.TicketPassenger" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TourBooking" EntityType="NobelMoonModel.Store.TourBooking" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TourPackage" EntityType="NobelMoonModel.Store.TourPackage" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Vehical" EntityType="NobelMoonModel.Store.Vehical" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="VisaType" EntityType="NobelMoonModel.Store.VisaType" store:Type="Tables" Schema="dbo" />
+  </EntityContainer>
+  <EntityType Name="Authorization">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SystemDate" Type="datetime" />
+    <Property Name="Code" Type="nvarchar" MaxLength="10" />
+    <Property Name="Description" Type="nvarchar" MaxLength="100" />
+    <Property Name="Staff" Type="nvarchar" MaxLength="10" />
+    <Property Name="User" Type="nvarchar" MaxLength="10" />
+    <Property Name="IsChecked" Type="bit" />
+  </EntityType>
+  <EntityType Name="CarRentalBooking">
+    <Key>
+      <PropertyRef Name="InvoiceNo" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SystemDate" Type="datetime" />
+    <Property Name="InvoiceNo" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="InvoiceDate" Type="datetime" />
+    <Property Name="ArrivalDate" Type="datetime" />
+    <Property Name="DepatureDate" Type="datetime" />
+    <Property Name="ContactPerson" Type="nvarchar" MaxLength="50" />
+    <Property Name="ContactPhone" Type="nvarchar" MaxLength="50" />
+    <Property Name="CompanyName" Type="nvarchar" MaxLength="50" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" />
+    <Property Name="Address" Type="nvarchar" MaxLength="100" />
+    <Property Name="Currency" Type="nvarchar" MaxLength="20" />
+    <Property Name="Rate" Type="decimal" />
+    <Property Name="PaymentTerm" Type="nvarchar" MaxLength="50" />
+    <Property Name="Remark" Type="nvarchar" MaxLength="100" />
+    <Property Name="TotalAmount" Type="decimal" />
+    <Property Name="ExtraCharges" Type="decimal" />
+    <Property Name="Balance" Type="decimal" />
+    <Property Name="MMKBalance" Type="decimal" />
+    <Property Name="t1" Type="nvarchar" MaxLength="100" />
+    <Property Name="t2" Type="nvarchar" MaxLength="100" />
+    <Property Name="Status" Type="nvarchar" MaxLength="50" />
+    <Property Name="User" Type="nvarchar" MaxLength="50" />
+    <Property Name="IsDelete" Type="bit" />
+  </EntityType>
+  <EntityType Name="CarRentalDetail">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SystemDate" Type="datetime" />
+    <Property Name="InvoiceNo" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="CarType" Type="nvarchar" MaxLength="100" />
+    <Property Name="Peroid" Type="nvarchar" MaxLength="100" />
+    <Property Name="Amount" Type="decimal" />
+    <Property Name="CarNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="Status" Type="nvarchar" MaxLength="50" />
+    <Property Name="User" Type="nvarchar" MaxLength="50" />
+    <Property Name="IsDelete" Type="bit" />
+  </EntityType>
+  <EntityType Name="CarType">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="Code" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Description" Type="nvarchar" MaxLength="100" />
+    <Property Name="User" Type="nvarchar" MaxLength="50" />
+    <Property Name="IsDelete" Type="bit" />
+  </EntityType>
+  <EntityType Name="Class">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="Name" Type="nvarchar" MaxLength="100" />
+    <Property Name="IsDelete" Type="bit" />
+  </EntityType>
+  <EntityType Name="Company">
+    <Key>
+      <PropertyRef Name="Name" />
+    </Key>
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="50" />
+    <Property Name="Fax" Type="nvarchar" MaxLength="50" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" />
+    <Property Name="Website" Type="nvarchar" MaxLength="50" />
+    <Property Name="Address" Type="nvarchar" MaxLength="100" />
+    <Property Name="Message" Type="nvarchar" MaxLength="50" />
+    <Property Name="Logo" Type="image" />
+  </EntityType>
+  <EntityType Name="Currency">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="Code" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Description" Type="nvarchar" MaxLength="50" />
+    <Property Name="Rate" Type="decimal" />
+    <Property Name="n1" Type="decimal" />
+    <Property Name="t1" Type="nvarchar" MaxLength="50" />
+    <Property Name="t2" Type="nvarchar" MaxLength="50" />
+    <Property Name="User" Type="nvarchar" MaxLength="50" />
+    <Property Name="IsDelete" Type="bit" />
+  </EntityType>
+  <EntityType Name="Hotel">
+    <Key>
+      <PropertyRef Name="Name" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="StarRate" Type="nvarchar" MaxLength="50" />
+    <Property Name="User" Type="nvarchar" MaxLength="50" />
+    <Property Name="IsDelete" Type="bit" />
+  </EntityType>
+  <EntityType Name="HotelBooking">
+    <Key>
+      <PropertyRef Name="InvoiceNo" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="InvoiceNo" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="SystemDate" Type="datetime" />
+    <Property Name="InvoiceDate" Type="datetime" />
+    <Property Name="ArrivalDate" Type="datetime" />
+    <Property Name="DepatureDate" Type="datetime" />
+    <Property Name="ContactPerson" Type="nvarchar" MaxLength="50" />
+    <Property Name="CompanyName" Type="nvarchar" MaxLength="50" />
+    <Property Name="ContactPhone" Type="nvarchar" MaxLength="50" />
+    <Property Name="Subject" Type="nvarchar" MaxLength="50" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" />
+    <Property Name="Address" Type="nvarchar" MaxLength="200" />
+    <Property Name="NoofPax" Type="int" />
+    <Property Name="NoofNight" Type="int" />
+    <Property Name="Hotel" Type="nvarchar" MaxLength="50" />
+    <Property Name="Remark" Type="nvarchar" MaxLength="200" />
+    <Property Name="Currency" Type="nvarchar" MaxLength="50" />
+    <Property Name="Rate" Type="decimal" />
+    <Property Name="PaymentTerm" Type="nvarchar" MaxLength="50" />
+    <Property Name="TotalRoom" Type="decimal" />
+    <Property Name="TotalAmount" Type="decimal" />
+    <Property Name="Balance" Type="decimal" />
+    <Property Name="DiscountPercent" Type="decimal" />
+    <Property Name="Discount" Type="decimal" />
+    <Property Name="MMKBalance" Type="decimal" />
+    <Property Name="t1" Type="nvarchar" MaxLength="100" />
+    <Property Name="t2" Type="nvarchar" MaxLength="100" />
+    <Property Name="Status" Type="nvarchar" MaxLength="50" />
+    <Property Name="User" Type="nvarchar" MaxLength="50" />
+    <Property Name="IsDelete" Type="bit" />
+  </EntityType>
+  <EntityType Name="HotelRoom">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="InvoiceNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="SystemDate" Type="datetime" />
+    <Property Name="RoomCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="RoomType" Type="nvarchar" MaxLength="50" />
+    <Property Name="Rate" Type="decimal" />
+    <Property Name="NoofRoom" Type="int" />
+    <Property Name="Amount" Type="decimal" />
+    <Property Name="User" Type="nvarchar" MaxLength="50" />
+    <Property Name="IsDelete" Type="bit" />
+  </EntityType>
+  <EntityType Name="IncomeType">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+    <Property Name="Code" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Description" Type="nvarchar" Nullable="false" MaxLength="150" />
+    <Property Name="User" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="IsDelete" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Package">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="Code" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Description" Type="nvarchar" MaxLength="200" />
+    <Property Name="Detail" Type="nvarchar" MaxLength="500" />
+    <Property Name="Type" Type="nvarchar" MaxLength="50" />
+    <Property Name="Price" Type="decimal" />
+    <Property Name="User" Type="nvarchar" MaxLength="50" />
+    <Property Name="IsDelete" Type="bit" />
+  </EntityType>
+  <EntityType Name="PackageType">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="Code" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Description" Type="nvarchar" MaxLength="50" />
+    <Property Name="User" Type="nvarchar" MaxLength="50" />
+    <Property Name="IsDelete" Type="bit" />
+  </EntityType>
+  <EntityType Name="PassportBooking">
+    <Key>
+      <PropertyRef Name="InvoiceNo" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SystemDate" Type="datetime" />
+    <Property Name="InvoiceNo" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="InvoiceDate" Type="datetime" />
+    <Property Name="ContactPerson" Type="nvarchar" MaxLength="50" />
+    <Property Name="ContactPhone" Type="nvarchar" MaxLength="50" />
+    <Property Name="PaymentTerm" Type="nvarchar" MaxLength="50" />
+    <Property Name="Type" Type="nvarchar" MaxLength="20" />
+    <Property Name="Currency" Type="nvarchar" MaxLength="20" />
+    <Property Name="Rate" Type="decimal" />
+    <Property Name="TotalNo" Type="int" />
+    <Property Name="TotalAmount" Type="decimal" />
+    <Property Name="MMKBalance" Type="decimal" />
+    <Property Name="Remark" Type="nvarchar" MaxLength="100" />
+    <Property Name="t1" Type="nvarchar" MaxLength="100" />
+    <Property Name="t2" Type="nvarchar" MaxLength="100" />
+    <Property Name="Status" Type="nvarchar" MaxLength="20" />
+    <Property Name="User" Type="nvarchar" MaxLength="50" />
+    <Property Name="IsDelete" Type="bit" />
+  </EntityType>
+  <EntityType Name="PassportPerson">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="InvoiceNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="SystemDate" Type="datetime" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="DOB" Type="datetime" />
+    <Property Name="NRC" Type="nvarchar" MaxLength="50" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="50" />
+    <Property Name="Requirements" Type="nvarchar" MaxLength="500" />
+    <Property Name="Address" Type="nvarchar" MaxLength="100" />
+    <Property Name="Charges" Type="decimal" />
+    <Property Name="Status" Type="nvarchar" MaxLength="50" />
+    <Property Name="User" Type="nvarchar" MaxLength="50" />
+    <Property Name="IsDelete" Type="bit" />
+  </EntityType>
+  <EntityType Name="PassportRequirement">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="InvoiceNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="SystemDate" Type="datetime" />
+    <Property Name="Description" Type="nvarchar" MaxLength="100" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="NRC" Type="nvarchar" MaxLength="50" />
+    <Property Name="User" Type="nvarchar" MaxLength="50" />
+    <Property Name="IsDelete" Type="bit" />
+  </EntityType>
+  <EntityType Name="PayforCredit">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="Date" Type="datetime" />
+    <Property Name="VoucherNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="InvoiceNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="ContactPerson" Type="nvarchar" MaxLength="50" />
+    <Property Name="Currency" Type="nvarchar" MaxLength="50" />
+    <Property Name="Rate" Type="decimal" />
+    <Property Name="CreditAmount" Type="decimal" />
+    <Property Name="Amount" Type="decimal" />
+    <Property Name="MMKBalance" Type="decimal" />
+    <Property Name="Remark" Type="nvarchar" MaxLength="100" />
+    <Property Name="Transaction" Type="nvarchar" MaxLength="50" />
+    <Property Name="UserID" Type="nvarchar" MaxLength="50" />
+    <Property Name="IsDelete" Type="bit" />
+  </EntityType>
+  <EntityType Name="PaymentTerm">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="Code" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Description" Type="nvarchar" MaxLength="50" />
+    <Property Name="n1" Type="decimal" />
+    <Property Name="n2" Type="int" />
+    <Property Name="t2" Type="nvarchar" MaxLength="50" />
+    <Property Name="User" Type="nvarchar" MaxLength="50" />
+    <Property Name="IsDelete" Type="bit" />
+  </EntityType>
+  <EntityType Name="Peroid">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="Code" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Description" Type="nvarchar" MaxLength="100" />
+    <Property Name="NoofDay" Type="int" />
+    <Property Name="User" Type="nvarchar" MaxLength="50" />
+    <Property Name="IsDelete" Type="bit" />
+  </EntityType>
+  <EntityType Name="RequireLetter">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="Code" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Description" Type="nvarchar" MaxLength="200" />
+    <Property Name="Type" Type="nvarchar" MaxLength="50" />
+    <Property Name="User" Type="nvarchar" MaxLength="50" />
+    <Property Name="IsDelete" Type="bit" />
+  </EntityType>
+  <EntityType Name="Role">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="Code" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Description" Type="nvarchar" MaxLength="50" />
+    <Property Name="User" Type="nvarchar" MaxLength="50" />
+    <Property Name="IsDelete" Type="bit" />
+  </EntityType>
+  <EntityType Name="RoomType">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="Code" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Description" Type="nvarchar" MaxLength="50" />
+    <Property Name="Rate" Type="decimal" />
+    <Property Name="User" Type="nvarchar" MaxLength="50" />
+    <Property Name="IsDelete" Type="bit" />
+  </EntityType>
+  <EntityType Name="Segment">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="Code" Type="nvarchar" MaxLength="50" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="IsDelete" Type="bit" />
+  </EntityType>
+  <EntityType Name="Services">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="Code" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Description" Type="nvarchar" MaxLength="300" />
+    <Property Name="Transaction" Type="nvarchar" MaxLength="50" />
+    <Property Name="User" Type="nvarchar" MaxLength="50" />
+    <Property Name="IsDelete" Type="bit" />
+  </EntityType>
+  <EntityType Name="ServicesOrRequirement">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="InvoiceNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="Transaction" Type="nvarchar" MaxLength="50" />
+    <Property Name="Code" Type="nvarchar" MaxLength="50" />
+    <Property Name="Description" Type="nvarchar" MaxLength="100" />
+    <Property Name="User" Type="nvarchar" MaxLength="50" />
+    <Property Name="IsDelete" Type="bit" />
+  </EntityType>
+  <EntityType Name="Staff">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="Code" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Name" Type="nvarchar" MaxLength="100" />
+    <Property Name="NRC" Type="nvarchar" MaxLength="50" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="50" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" />
+    <Property Name="Address" Type="nvarchar" MaxLength="200" />
+    <Property Name="User" Type="nvarchar" MaxLength="50" />
+    <Property Name="IsDelete" Type="bit" />
+  </EntityType>
+  <EntityType Name="TblUser">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="Code" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="StaffCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="Role" Type="nvarchar" MaxLength="50" />
+    <Property Name="Password" Type="nvarchar" MaxLength="50" />
+    <Property Name="User" Type="nvarchar" MaxLength="50" />
+    <Property Name="IsDelete" Type="bit" />
+  </EntityType>
+  <EntityType Name="TicketBooking">
+    <Key>
+      <PropertyRef Name="InvoiceNo" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="InvoiceNo" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="SystemDate" Type="datetime" />
+    <Property Name="Date" Type="datetime" />
+    <Property Name="ContactPerson" Type="nvarchar" MaxLength="100" />
+    <Property Name="CompanyName" Type="nvarchar" MaxLength="100" />
+    <Property Name="Terms" Type="nvarchar" MaxLength="50" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="100" />
+    <Property Name="Email" Type="nvarchar" MaxLength="100" />
+    <Property Name="Address" Type="nvarchar" MaxLength="500" />
+    <Property Name="NoSeat" Type="int" />
+    <Property Name="Tax" Type="decimal" />
+    <Property Name="Total" Type="decimal" />
+    <Property Name="Currency" Type="nvarchar" MaxLength="50" />
+    <Property Name="Rate" Type="int" />
+    <Property Name="PaymentCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="PaymentDes" Type="nvarchar" MaxLength="100" />
+    <Property Name="t1" Type="nvarchar" MaxLength="200" />
+    <Property Name="Type" Type="nvarchar" MaxLength="50" />
+    <Property Name="MMKBalance" Type="decimal" />
+    <Property Name="IsTransit" Type="bit" />
+    <Property Name="t2" Type="nvarchar" MaxLength="100" />
+    <Property Name="t3" Type="nvarchar" MaxLength="100" />
+    <Property Name="Status" Type="nvarchar" MaxLength="50" />
+    <Property Name="User" Type="nvarchar" MaxLength="50" />
+    <Property Name="IsDelete" Type="bit" />
+  </EntityType>
+  <EntityType Name="TicketFlight">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="InvoiceNo" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="SystemDate" Type="date" />
+    <Property Name="From" Type="nvarchar" MaxLength="50" />
+    <Property Name="To" Type="nvarchar" MaxLength="50" />
+    <Property Name="Date" Type="datetime" />
+    <Property Name="Time" Type="datetime" />
+    <Property Name="ArrivalDate" Type="datetime" />
+    <Property Name="ArrivalTime" Type="datetime" />
+    <Property Name="Class" Type="nvarchar" MaxLength="50" />
+    <Property Name="AirLine" Type="nvarchar" MaxLength="50" />
+    <Property Name="Flight" Type="nvarchar" MaxLength="50" />
+    <Property Name="NoSeats" Type="int" />
+    <Property Name="User" Type="nvarchar" MaxLength="50" />
+    <Property Name="IsDelete" Type="bit" />
+  </EntityType>
+  <EntityType Name="TicketPassenger">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="InvoiceNo" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="PassengerName" Type="nvarchar" MaxLength="100" />
+    <Property Name="TicketNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="Fare" Type="decimal" />
+    <Property Name="tax" Type="decimal" />
+    <Property Name="TotalFare" Type="decimal" />
+    <Property Name="Type" Type="nvarchar" MaxLength="50" />
+    <Property Name="User" Type="nvarchar" MaxLength="50" />
+    <Property Name="t1" Type="nvarchar" MaxLength="50" />
+    <Property Name="t2" Type="nvarchar" MaxLength="50" />
+    <Property Name="IsDelete" Type="bit" />
+  </EntityType>
+  <EntityType Name="TourBooking">
+    <Key>
+      <PropertyRef Name="InvoiceNo" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SystemDate" Type="datetime" />
+    <Property Name="InvoiceNo" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="InvoiceDate" Type="datetime" />
+    <Property Name="ArrivalDate" Type="datetime" />
+    <Property Name="DepatureDate" Type="datetime" />
+    <Property Name="ContactPerson" Type="nvarchar" MaxLength="50" />
+    <Property Name="CompanyName" Type="nvarchar" MaxLength="50" />
+    <Property Name="ContactPhone" Type="nvarchar" MaxLength="50" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" />
+    <Property Name="Address" Type="nvarchar" MaxLength="200" />
+    <Property Name="MeetingPoint" Type="nvarchar" MaxLength="200" />
+    <Property Name="Currency" Type="nvarchar" MaxLength="50" />
+    <Property Name="NoofNight" Type="int" />
+    <Property Name="Remark" Type="nvarchar" MaxLength="200" />
+    <Property Name="Rate" Type="decimal" />
+    <Property Name="PaymentTerm" Type="nvarchar" MaxLength="50" />
+    <Property Name="TotalAmount" Type="decimal" />
+    <Property Name="Discount Percent" Type="int" />
+    <Property Name="Discount" Type="decimal" />
+    <Property Name="Balance" Type="decimal" />
+    <Property Name="MMKBalance" Type="decimal" />
+    <Property Name="Type" Type="nvarchar" MaxLength="50" />
+    <Property Name="t1" Type="nvarchar" MaxLength="100" />
+    <Property Name="t2" Type="nvarchar" MaxLength="100" />
+    <Property Name="Status" Type="nvarchar" MaxLength="50" />
+    <Property Name="User" Type="nvarchar" MaxLength="50" />
+    <Property Name="IsDelete" Type="bit" />
+  </EntityType>
+  <EntityType Name="TourPackage">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SystemDate" Type="datetime" />
+    <Property Name="InvoiceNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="PackageCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="PackageDescription" Type="nvarchar" MaxLength="200" />
+    <Property Name="Price" Type="decimal" />
+    <Property Name="NoofPax" Type="int" />
+    <Property Name="Amount" Type="decimal" />
+    <Property Name="AirLine" Type="nvarchar" MaxLength="50" />
+    <Property Name="FlightNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="Status" Type="nvarchar" MaxLength="50" />
+    <Property Name="User" Type="nvarchar" MaxLength="50" />
+    <Property Name="IsDelete" Type="bit" />
+  </EntityType>
+  <EntityType Name="Vehical">
+    <Key>
+      <PropertyRef Name="Name" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="Type" Type="nvarchar" MaxLength="50" />
+    <Property Name="User" Type="nvarchar" MaxLength="50" />
+    <Property Name="IsDelete" Type="bit" />
+  </EntityType>
+  <EntityType Name="VisaType">
+    <Key>
+      <PropertyRef Name="Description" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="Description" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="User" Type="nvarchar" MaxLength="50" />
+    <Property Name="IsDelete" Type="bit" />
+  </EntityType>
+  <Function Name="GetAirTicketHeaderReport" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="GetCarRentalHeaderReport" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="GetCashReport" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="fdate" Type="datetime" Mode="In" />
+    <Parameter Name="tdate" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="GetFormNo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Type" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="GetHotelBookingHeaderReport" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="GetPassportHeaderReport" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="GetTourPackageBookingHeaderReport" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SP_Backup" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Directory" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="SP_CheckCreditList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="fromDate" Type="date" Mode="In" />
+    <Parameter Name="toDate" Type="date" Mode="In" />
+    <Parameter Name="Customer" Type="nvarchar" Mode="In" />
+    <Parameter Name="Voucher" Type="nvarchar" Mode="In" />
+    <Parameter Name="Transaction" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_ChkTransactionForSaleEditDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="VoucherNo" Type="nvarchar" Mode="In" />
+    <Parameter Name="Tran" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="SP_GetTotalAmountByMonthly" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Transaction" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="SP_GetTotalAmountByTransaction" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Type" Type="nvarchar" Mode="In" />
+  </Function>
+</Schema>

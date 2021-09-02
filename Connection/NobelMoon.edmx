@@ -1,0 +1,2157 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="NobelMoonModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="NobelMoonModelStoreContainer">
+          <EntitySet Name="Authorization" EntityType="NobelMoonModel.Store.Authorization" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="CarRentalBooking" EntityType="NobelMoonModel.Store.CarRentalBooking" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="CarRentalDetail" EntityType="NobelMoonModel.Store.CarRentalDetail" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="CarType" EntityType="NobelMoonModel.Store.CarType" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Class" EntityType="NobelMoonModel.Store.Class" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Company" EntityType="NobelMoonModel.Store.Company" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Currency" EntityType="NobelMoonModel.Store.Currency" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Hotel" EntityType="NobelMoonModel.Store.Hotel" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="HotelBooking" EntityType="NobelMoonModel.Store.HotelBooking" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="HotelRoom" EntityType="NobelMoonModel.Store.HotelRoom" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="IncomeType" EntityType="NobelMoonModel.Store.IncomeType" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Package" EntityType="NobelMoonModel.Store.Package" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="PackageType" EntityType="NobelMoonModel.Store.PackageType" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="PassportBooking" EntityType="NobelMoonModel.Store.PassportBooking" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="PassportPerson" EntityType="NobelMoonModel.Store.PassportPerson" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="PassportRequirement" EntityType="NobelMoonModel.Store.PassportRequirement" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="PayforCredit" EntityType="NobelMoonModel.Store.PayforCredit" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="PaymentTerm" EntityType="NobelMoonModel.Store.PaymentTerm" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Peroid" EntityType="NobelMoonModel.Store.Peroid" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="RequireLetter" EntityType="NobelMoonModel.Store.RequireLetter" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Role" EntityType="NobelMoonModel.Store.Role" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="RoomType" EntityType="NobelMoonModel.Store.RoomType" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Segment" EntityType="NobelMoonModel.Store.Segment" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Services" EntityType="NobelMoonModel.Store.Services" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ServicesOrRequirement" EntityType="NobelMoonModel.Store.ServicesOrRequirement" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Staff" EntityType="NobelMoonModel.Store.Staff" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TblUser" EntityType="NobelMoonModel.Store.TblUser" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TicketBooking" EntityType="NobelMoonModel.Store.TicketBooking" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TicketFlight" EntityType="NobelMoonModel.Store.TicketFlight" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TicketPassenger" EntityType="NobelMoonModel.Store.TicketPassenger" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TourBooking" EntityType="NobelMoonModel.Store.TourBooking" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TourPackage" EntityType="NobelMoonModel.Store.TourPackage" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Vehical" EntityType="NobelMoonModel.Store.Vehical" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="VisaType" EntityType="NobelMoonModel.Store.VisaType" store:Type="Tables" Schema="dbo" />
+        </EntityContainer>
+        <EntityType Name="Authorization">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="SystemDate" Type="datetime" />
+          <Property Name="Code" Type="nvarchar" MaxLength="10" />
+          <Property Name="Description" Type="nvarchar" MaxLength="100" />
+          <Property Name="Staff" Type="nvarchar" MaxLength="10" />
+          <Property Name="User" Type="nvarchar" MaxLength="10" />
+          <Property Name="IsChecked" Type="bit" />
+        </EntityType>
+        <EntityType Name="CarRentalBooking">
+          <Key>
+            <PropertyRef Name="InvoiceNo" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="SystemDate" Type="datetime" />
+          <Property Name="InvoiceNo" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="InvoiceDate" Type="datetime" />
+          <Property Name="ArrivalDate" Type="datetime" />
+          <Property Name="DepatureDate" Type="datetime" />
+          <Property Name="ContactPerson" Type="nvarchar" MaxLength="50" />
+          <Property Name="ContactPhone" Type="nvarchar" MaxLength="50" />
+          <Property Name="CompanyName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" />
+          <Property Name="Address" Type="nvarchar" MaxLength="100" />
+          <Property Name="Currency" Type="nvarchar" MaxLength="20" />
+          <Property Name="Rate" Type="decimal" />
+          <Property Name="PaymentTerm" Type="nvarchar" MaxLength="50" />
+          <Property Name="Remark" Type="nvarchar" MaxLength="100" />
+          <Property Name="TotalAmount" Type="decimal" />
+          <Property Name="ExtraCharges" Type="decimal" />
+          <Property Name="Balance" Type="decimal" />
+          <Property Name="MMKBalance" Type="decimal" />
+          <Property Name="t1" Type="nvarchar" MaxLength="100" />
+          <Property Name="t2" Type="nvarchar" MaxLength="100" />
+          <Property Name="Status" Type="nvarchar" MaxLength="50" />
+          <Property Name="User" Type="nvarchar" MaxLength="50" />
+          <Property Name="IsDelete" Type="bit" />
+        </EntityType>
+        <EntityType Name="CarRentalDetail">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="SystemDate" Type="datetime" />
+          <Property Name="InvoiceNo" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="CarType" Type="nvarchar" MaxLength="100" />
+          <Property Name="Peroid" Type="nvarchar" MaxLength="100" />
+          <Property Name="Amount" Type="decimal" />
+          <Property Name="CarNo" Type="nvarchar" MaxLength="50" />
+          <Property Name="Status" Type="nvarchar" MaxLength="50" />
+          <Property Name="User" Type="nvarchar" MaxLength="50" />
+          <Property Name="IsDelete" Type="bit" />
+        </EntityType>
+        <EntityType Name="CarType">
+          <Key>
+            <PropertyRef Name="Code" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="Code" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Description" Type="nvarchar" MaxLength="100" />
+          <Property Name="User" Type="nvarchar" MaxLength="50" />
+          <Property Name="IsDelete" Type="bit" />
+        </EntityType>
+        <EntityType Name="Class">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="Name" Type="nvarchar" MaxLength="100" />
+          <Property Name="IsDelete" Type="bit" />
+        </EntityType>
+        <EntityType Name="Company">
+          <Key>
+            <PropertyRef Name="Name" />
+          </Key>
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Phone" Type="nvarchar" MaxLength="50" />
+          <Property Name="Fax" Type="nvarchar" MaxLength="50" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" />
+          <Property Name="Website" Type="nvarchar" MaxLength="50" />
+          <Property Name="Address" Type="nvarchar" MaxLength="100" />
+          <Property Name="Message" Type="nvarchar" MaxLength="50" />
+          <Property Name="Logo" Type="image" />
+        </EntityType>
+        <EntityType Name="Currency">
+          <Key>
+            <PropertyRef Name="Code" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="Code" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Description" Type="nvarchar" MaxLength="50" />
+          <Property Name="Rate" Type="decimal" />
+          <Property Name="n1" Type="decimal" />
+          <Property Name="t1" Type="nvarchar" MaxLength="50" />
+          <Property Name="t2" Type="nvarchar" MaxLength="50" />
+          <Property Name="User" Type="nvarchar" MaxLength="50" />
+          <Property Name="IsDelete" Type="bit" />
+        </EntityType>
+        <EntityType Name="Hotel">
+          <Key>
+            <PropertyRef Name="Name" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="StarRate" Type="nvarchar" MaxLength="50" />
+          <Property Name="User" Type="nvarchar" MaxLength="50" />
+          <Property Name="IsDelete" Type="bit" />
+        </EntityType>
+        <EntityType Name="HotelBooking">
+          <Key>
+            <PropertyRef Name="InvoiceNo" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="InvoiceNo" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="SystemDate" Type="datetime" />
+          <Property Name="InvoiceDate" Type="datetime" />
+          <Property Name="ArrivalDate" Type="datetime" />
+          <Property Name="DepatureDate" Type="datetime" />
+          <Property Name="ContactPerson" Type="nvarchar" MaxLength="50" />
+          <Property Name="CompanyName" Type="nvarchar" MaxLength="50" />
+          <Property Name="ContactPhone" Type="nvarchar" MaxLength="50" />
+          <Property Name="Subject" Type="nvarchar" MaxLength="50" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" />
+          <Property Name="Address" Type="nvarchar" MaxLength="200" />
+          <Property Name="NoofPax" Type="int" />
+          <Property Name="NoofNight" Type="int" />
+          <Property Name="Hotel" Type="nvarchar" MaxLength="50" />
+          <Property Name="Remark" Type="nvarchar" MaxLength="200" />
+          <Property Name="Currency" Type="nvarchar" MaxLength="50" />
+          <Property Name="Rate" Type="decimal" />
+          <Property Name="PaymentTerm" Type="nvarchar" MaxLength="50" />
+          <Property Name="TotalRoom" Type="decimal" />
+          <Property Name="TotalAmount" Type="decimal" />
+          <Property Name="Balance" Type="decimal" />
+          <Property Name="DiscountPercent" Type="decimal" />
+          <Property Name="Discount" Type="decimal" />
+          <Property Name="MMKBalance" Type="decimal" />
+          <Property Name="t1" Type="nvarchar" MaxLength="100" />
+          <Property Name="t2" Type="nvarchar" MaxLength="100" />
+          <Property Name="Status" Type="nvarchar" MaxLength="50" />
+          <Property Name="User" Type="nvarchar" MaxLength="50" />
+          <Property Name="IsDelete" Type="bit" />
+        </EntityType>
+        <EntityType Name="HotelRoom">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="InvoiceNo" Type="nvarchar" MaxLength="50" />
+          <Property Name="SystemDate" Type="datetime" />
+          <Property Name="RoomCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="RoomType" Type="nvarchar" MaxLength="50" />
+          <Property Name="Rate" Type="decimal" />
+          <Property Name="NoofRoom" Type="int" />
+          <Property Name="Amount" Type="decimal" />
+          <Property Name="User" Type="nvarchar" MaxLength="50" />
+          <Property Name="IsDelete" Type="bit" />
+        </EntityType>
+        <EntityType Name="IncomeType">
+          <Key>
+            <PropertyRef Name="Code" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="Code" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Description" Type="nvarchar" Nullable="false" MaxLength="150" />
+          <Property Name="User" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="IsDelete" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Package">
+          <Key>
+            <PropertyRef Name="Code" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="Code" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Description" Type="nvarchar" MaxLength="200" />
+          <Property Name="Detail" Type="nvarchar" MaxLength="500" />
+          <Property Name="Type" Type="nvarchar" MaxLength="50" />
+          <Property Name="Price" Type="decimal" />
+          <Property Name="User" Type="nvarchar" MaxLength="50" />
+          <Property Name="IsDelete" Type="bit" />
+        </EntityType>
+        <EntityType Name="PackageType">
+          <Key>
+            <PropertyRef Name="Code" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="Code" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Description" Type="nvarchar" MaxLength="50" />
+          <Property Name="User" Type="nvarchar" MaxLength="50" />
+          <Property Name="IsDelete" Type="bit" />
+        </EntityType>
+        <EntityType Name="PassportBooking">
+          <Key>
+            <PropertyRef Name="InvoiceNo" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="SystemDate" Type="datetime" />
+          <Property Name="InvoiceNo" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="InvoiceDate" Type="datetime" />
+          <Property Name="ContactPerson" Type="nvarchar" MaxLength="50" />
+          <Property Name="ContactPhone" Type="nvarchar" MaxLength="50" />
+          <Property Name="PaymentTerm" Type="nvarchar" MaxLength="50" />
+          <Property Name="Type" Type="nvarchar" MaxLength="20" />
+          <Property Name="Currency" Type="nvarchar" MaxLength="20" />
+          <Property Name="Rate" Type="decimal" />
+          <Property Name="TotalNo" Type="int" />
+          <Property Name="TotalAmount" Type="decimal" />
+          <Property Name="MMKBalance" Type="decimal" />
+          <Property Name="Remark" Type="nvarchar" MaxLength="100" />
+          <Property Name="t1" Type="nvarchar" MaxLength="100" />
+          <Property Name="t2" Type="nvarchar" MaxLength="100" />
+          <Property Name="Status" Type="nvarchar" MaxLength="20" />
+          <Property Name="User" Type="nvarchar" MaxLength="50" />
+          <Property Name="IsDelete" Type="bit" />
+        </EntityType>
+        <EntityType Name="PassportPerson">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="InvoiceNo" Type="nvarchar" MaxLength="50" />
+          <Property Name="SystemDate" Type="datetime" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="DOB" Type="datetime" />
+          <Property Name="NRC" Type="nvarchar" MaxLength="50" />
+          <Property Name="Phone" Type="nvarchar" MaxLength="50" />
+          <Property Name="Requirements" Type="nvarchar" MaxLength="500" />
+          <Property Name="Address" Type="nvarchar" MaxLength="100" />
+          <Property Name="Charges" Type="decimal" />
+          <Property Name="Status" Type="nvarchar" MaxLength="50" />
+          <Property Name="User" Type="nvarchar" MaxLength="50" />
+          <Property Name="IsDelete" Type="bit" />
+        </EntityType>
+        <EntityType Name="PassportRequirement">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="InvoiceNo" Type="nvarchar" MaxLength="50" />
+          <Property Name="SystemDate" Type="datetime" />
+          <Property Name="Description" Type="nvarchar" MaxLength="100" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="NRC" Type="nvarchar" MaxLength="50" />
+          <Property Name="User" Type="nvarchar" MaxLength="50" />
+          <Property Name="IsDelete" Type="bit" />
+        </EntityType>
+        <EntityType Name="PayforCredit">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="Date" Type="datetime" />
+          <Property Name="VoucherNo" Type="nvarchar" MaxLength="50" />
+          <Property Name="InvoiceNo" Type="nvarchar" MaxLength="50" />
+          <Property Name="ContactPerson" Type="nvarchar" MaxLength="50" />
+          <Property Name="Currency" Type="nvarchar" MaxLength="50" />
+          <Property Name="Rate" Type="decimal" />
+          <Property Name="CreditAmount" Type="decimal" />
+          <Property Name="Amount" Type="decimal" />
+          <Property Name="MMKBalance" Type="decimal" />
+          <Property Name="Remark" Type="nvarchar" MaxLength="100" />
+          <Property Name="Transaction" Type="nvarchar" MaxLength="50" />
+          <Property Name="UserID" Type="nvarchar" MaxLength="50" />
+          <Property Name="IsDelete" Type="bit" />
+        </EntityType>
+        <EntityType Name="PaymentTerm">
+          <Key>
+            <PropertyRef Name="Code" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="Code" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Description" Type="nvarchar" MaxLength="50" />
+          <Property Name="n1" Type="decimal" />
+          <Property Name="n2" Type="int" />
+          <Property Name="t2" Type="nvarchar" MaxLength="50" />
+          <Property Name="User" Type="nvarchar" MaxLength="50" />
+          <Property Name="IsDelete" Type="bit" />
+        </EntityType>
+        <EntityType Name="Peroid">
+          <Key>
+            <PropertyRef Name="Code" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="Code" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Description" Type="nvarchar" MaxLength="100" />
+          <Property Name="NoofDay" Type="int" />
+          <Property Name="User" Type="nvarchar" MaxLength="50" />
+          <Property Name="IsDelete" Type="bit" />
+        </EntityType>
+        <EntityType Name="RequireLetter">
+          <Key>
+            <PropertyRef Name="Code" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="Code" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Description" Type="nvarchar" MaxLength="200" />
+          <Property Name="Type" Type="nvarchar" MaxLength="50" />
+          <Property Name="User" Type="nvarchar" MaxLength="50" />
+          <Property Name="IsDelete" Type="bit" />
+        </EntityType>
+        <EntityType Name="Role">
+          <Key>
+            <PropertyRef Name="Code" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="Code" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Description" Type="nvarchar" MaxLength="50" />
+          <Property Name="User" Type="nvarchar" MaxLength="50" />
+          <Property Name="IsDelete" Type="bit" />
+        </EntityType>
+        <EntityType Name="RoomType">
+          <Key>
+            <PropertyRef Name="Code" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="Code" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Description" Type="nvarchar" MaxLength="50" />
+          <Property Name="Rate" Type="decimal" />
+          <Property Name="User" Type="nvarchar" MaxLength="50" />
+          <Property Name="IsDelete" Type="bit" />
+        </EntityType>
+        <EntityType Name="Segment">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="Code" Type="nvarchar" MaxLength="50" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="IsDelete" Type="bit" />
+        </EntityType>
+        <EntityType Name="Services">
+          <Key>
+            <PropertyRef Name="Code" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CreateDate" Type="datetime" />
+          <Property Name="Code" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Description" Type="nvarchar" MaxLength="300" />
+          <Property Name="Transaction" Type="nvarchar" MaxLength="50" />
+          <Property Name="User" Type="nvarchar" MaxLength="50" />
+          <Property Name="IsDelete" Type="bit" />
+        </EntityType>
+        <EntityType Name="ServicesOrRequirement">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="InvoiceNo" Type="nvarchar" MaxLength="50" />
+          <Property Name="Transaction" Type="nvarchar" MaxLength="50" />
+          <Property Name="Code" Type="nvarchar" MaxLength="50" />
+          <Property Name="Description" Type="nvarchar" MaxLength="100" />
+          <Property Name="User" Type="nvarchar" MaxLength="50" />
+          <Property Name="IsDelete" Type="bit" />
+        </EntityType>
+        <EntityType Name="Staff">
+          <Key>
+            <PropertyRef Name="Code" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="Code" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Name" Type="nvarchar" MaxLength="100" />
+          <Property Name="NRC" Type="nvarchar" MaxLength="50" />
+          <Property Name="Phone" Type="nvarchar" MaxLength="50" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" />
+          <Property Name="Address" Type="nvarchar" MaxLength="200" />
+          <Property Name="User" Type="nvarchar" MaxLength="50" />
+          <Property Name="IsDelete" Type="bit" />
+        </EntityType>
+        <EntityType Name="TblUser">
+          <Key>
+            <PropertyRef Name="Code" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="Code" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="StaffCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="Role" Type="nvarchar" MaxLength="50" />
+          <Property Name="Password" Type="nvarchar" MaxLength="50" />
+          <Property Name="User" Type="nvarchar" MaxLength="50" />
+          <Property Name="IsDelete" Type="bit" />
+        </EntityType>
+        <EntityType Name="TicketBooking">
+          <Key>
+            <PropertyRef Name="InvoiceNo" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="InvoiceNo" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="SystemDate" Type="datetime" />
+          <Property Name="Date" Type="datetime" />
+          <Property Name="ContactPerson" Type="nvarchar" MaxLength="100" />
+          <Property Name="CompanyName" Type="nvarchar" MaxLength="100" />
+          <Property Name="Terms" Type="nvarchar" MaxLength="50" />
+          <Property Name="Phone" Type="nvarchar" MaxLength="100" />
+          <Property Name="Email" Type="nvarchar" MaxLength="100" />
+          <Property Name="Address" Type="nvarchar" MaxLength="500" />
+          <Property Name="NoSeat" Type="int" />
+          <Property Name="Tax" Type="decimal" />
+          <Property Name="Total" Type="decimal" />
+          <Property Name="Currency" Type="nvarchar" MaxLength="50" />
+          <Property Name="Rate" Type="int" />
+          <Property Name="PaymentCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="PaymentDes" Type="nvarchar" MaxLength="100" />
+          <Property Name="t1" Type="nvarchar" MaxLength="200" />
+          <Property Name="Type" Type="nvarchar" MaxLength="50" />
+          <Property Name="MMKBalance" Type="decimal" />
+          <Property Name="IsTransit" Type="bit" />
+          <Property Name="t2" Type="nvarchar" MaxLength="100" />
+          <Property Name="t3" Type="nvarchar" MaxLength="100" />
+          <Property Name="Status" Type="nvarchar" MaxLength="50" />
+          <Property Name="User" Type="nvarchar" MaxLength="50" />
+          <Property Name="IsDelete" Type="bit" />
+        </EntityType>
+        <EntityType Name="TicketFlight">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="InvoiceNo" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="SystemDate" Type="date" />
+          <Property Name="From" Type="nvarchar" MaxLength="50" />
+          <Property Name="To" Type="nvarchar" MaxLength="50" />
+          <Property Name="Date" Type="datetime" />
+          <Property Name="Time" Type="datetime" />
+          <Property Name="ArrivalDate" Type="datetime" />
+          <Property Name="ArrivalTime" Type="datetime" />
+          <Property Name="Class" Type="nvarchar" MaxLength="50" />
+          <Property Name="AirLine" Type="nvarchar" MaxLength="50" />
+          <Property Name="Flight" Type="nvarchar" MaxLength="50" />
+          <Property Name="NoSeats" Type="int" />
+          <Property Name="User" Type="nvarchar" MaxLength="50" />
+          <Property Name="IsDelete" Type="bit" />
+        </EntityType>
+        <EntityType Name="TicketPassenger">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="InvoiceNo" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="PassengerName" Type="nvarchar" MaxLength="100" />
+          <Property Name="TicketNo" Type="nvarchar" MaxLength="50" />
+          <Property Name="Fare" Type="decimal" />
+          <Property Name="tax" Type="decimal" />
+          <Property Name="TotalFare" Type="decimal" />
+          <Property Name="Type" Type="nvarchar" MaxLength="50" />
+          <Property Name="User" Type="nvarchar" MaxLength="50" />
+          <Property Name="t1" Type="nvarchar" MaxLength="50" />
+          <Property Name="t2" Type="nvarchar" MaxLength="50" />
+          <Property Name="IsDelete" Type="bit" />
+        </EntityType>
+        <EntityType Name="TourBooking">
+          <Key>
+            <PropertyRef Name="InvoiceNo" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="SystemDate" Type="datetime" />
+          <Property Name="InvoiceNo" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="InvoiceDate" Type="datetime" />
+          <Property Name="ArrivalDate" Type="datetime" />
+          <Property Name="DepatureDate" Type="datetime" />
+          <Property Name="ContactPerson" Type="nvarchar" MaxLength="50" />
+          <Property Name="CompanyName" Type="nvarchar" MaxLength="50" />
+          <Property Name="ContactPhone" Type="nvarchar" MaxLength="50" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" />
+          <Property Name="Address" Type="nvarchar" MaxLength="200" />
+          <Property Name="MeetingPoint" Type="nvarchar" MaxLength="200" />
+          <Property Name="Currency" Type="nvarchar" MaxLength="50" />
+          <Property Name="NoofNight" Type="int" />
+          <Property Name="Remark" Type="nvarchar" MaxLength="200" />
+          <Property Name="Rate" Type="decimal" />
+          <Property Name="PaymentTerm" Type="nvarchar" MaxLength="50" />
+          <Property Name="TotalAmount" Type="decimal" />
+          <Property Name="Discount Percent" Type="int" />
+          <Property Name="Discount" Type="decimal" />
+          <Property Name="Balance" Type="decimal" />
+          <Property Name="MMKBalance" Type="decimal" />
+          <Property Name="Type" Type="nvarchar" MaxLength="50" />
+          <Property Name="t1" Type="nvarchar" MaxLength="100" />
+          <Property Name="t2" Type="nvarchar" MaxLength="100" />
+          <Property Name="Status" Type="nvarchar" MaxLength="50" />
+          <Property Name="User" Type="nvarchar" MaxLength="50" />
+          <Property Name="IsDelete" Type="bit" />
+        </EntityType>
+        <EntityType Name="TourPackage">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="SystemDate" Type="datetime" />
+          <Property Name="InvoiceNo" Type="nvarchar" MaxLength="50" />
+          <Property Name="PackageCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="PackageDescription" Type="nvarchar" MaxLength="200" />
+          <Property Name="Price" Type="decimal" />
+          <Property Name="NoofPax" Type="int" />
+          <Property Name="Amount" Type="decimal" />
+          <Property Name="AirLine" Type="nvarchar" MaxLength="50" />
+          <Property Name="FlightNo" Type="nvarchar" MaxLength="50" />
+          <Property Name="Status" Type="nvarchar" MaxLength="50" />
+          <Property Name="User" Type="nvarchar" MaxLength="50" />
+          <Property Name="IsDelete" Type="bit" />
+        </EntityType>
+        <EntityType Name="Vehical">
+          <Key>
+            <PropertyRef Name="Name" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="Type" Type="nvarchar" MaxLength="50" />
+          <Property Name="User" Type="nvarchar" MaxLength="50" />
+          <Property Name="IsDelete" Type="bit" />
+        </EntityType>
+        <EntityType Name="VisaType">
+          <Key>
+            <PropertyRef Name="Description" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="Description" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="User" Type="nvarchar" MaxLength="50" />
+          <Property Name="IsDelete" Type="bit" />
+        </EntityType>
+        <Function Name="GetAirTicketHeaderReport" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="GetCarRentalHeaderReport" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="GetCashReport" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="fdate" Type="datetime" Mode="In" />
+          <Parameter Name="tdate" Type="datetime" Mode="In" />
+        </Function>
+        <Function Name="GetFormNo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Type" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="GetHotelBookingHeaderReport" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="GetPassportHeaderReport" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="GetTourPackageBookingHeaderReport" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="SP_Backup" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Directory" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="SP_CheckCreditList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="fromDate" Type="date" Mode="In" />
+          <Parameter Name="toDate" Type="date" Mode="In" />
+          <Parameter Name="Customer" Type="nvarchar" Mode="In" />
+          <Parameter Name="Voucher" Type="nvarchar" Mode="In" />
+          <Parameter Name="Transaction" Type="int" Mode="In" />
+        </Function>
+        <Function Name="SP_ChkTransactionForSaleEditDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="VoucherNo" Type="nvarchar" Mode="In" />
+          <Parameter Name="Tran" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="SP_GetTotalAmountByMonthly" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Transaction" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="SP_GetTotalAmountByTransaction" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Type" Type="nvarchar" Mode="In" />
+        </Function>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="NobelMoonModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="NobelMoonEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Classes" EntityType="NobelMoonModel.Class" />
+          <EntitySet Name="Currencies" EntityType="NobelMoonModel.Currency" />
+          <EntitySet Name="HotelBookings" EntityType="NobelMoonModel.HotelBooking" />
+          <EntitySet Name="HotelRooms" EntityType="NobelMoonModel.HotelRoom" />
+          <EntitySet Name="PaymentTerms" EntityType="NobelMoonModel.PaymentTerm" />
+          <EntitySet Name="Roles" EntityType="NobelMoonModel.Role" />
+          <EntitySet Name="RoomTypes" EntityType="NobelMoonModel.RoomType" />
+          <EntitySet Name="Segments" EntityType="NobelMoonModel.Segment" />
+          <EntitySet Name="Staffs" EntityType="NobelMoonModel.Staff" />
+          <EntitySet Name="TblUsers" EntityType="NobelMoonModel.TblUser" />
+          <EntitySet Name="TicketPassengers" EntityType="NobelMoonModel.TicketPassenger" />
+          <FunctionImport Name="GetFormNo" ReturnType="Collection(String)">
+          <Parameter Name="Type" Mode="In" Type="String" />
+          </FunctionImport>
+          <EntitySet Name="Vehicals" EntityType="NobelMoonModel.Vehical" />
+          <EntitySet Name="Packages" EntityType="NobelMoonModel.Package" />
+          <EntitySet Name="PackageTypes" EntityType="NobelMoonModel.PackageType" />
+          <EntitySet Name="TourPackages" EntityType="NobelMoonModel.TourPackage" />
+          <EntitySet Name="TicketBookings" EntityType="NobelMoonModel.TicketBooking" />
+          <FunctionImport Name="GetHotelBookingHeaderReport" ReturnType="Collection(NobelMoonModel.GetHotelBookingHeaderReport_Result)" />
+          <EntitySet Name="TicketFlights" EntityType="NobelMoonModel.TicketFlight" />
+          <EntitySet Name="TourBookings" EntityType="NobelMoonModel.TourBooking" />
+          <EntitySet Name="Hotels" EntityType="NobelMoonModel.Hotel" />
+          <EntitySet Name="VisaTypes" EntityType="NobelMoonModel.VisaType" />
+          <EntitySet Name="PassportBookings" EntityType="NobelMoonModel.PassportBooking" />
+          <EntitySet Name="PassportRequirements" EntityType="NobelMoonModel.PassportRequirement" />
+          <EntitySet Name="PassportPersons" EntityType="NobelMoonModel.PassportPerson" />
+          <EntitySet Name="Authorizations" EntityType="NobelMoonModel.Authorization" />
+          <EntitySet Name="Company" EntityType="NobelMoonModel.Company" />
+          <EntitySet Name="CarType" EntityType="NobelMoonModel.CarType" />
+          <EntitySet Name="Peroid" EntityType="NobelMoonModel.Peroid" />
+          <EntitySet Name="CarRentalBooking" EntityType="NobelMoonModel.CarRentalBooking" />
+          <FunctionImport Name="GetCarRentalHeaderReport" ReturnType="Collection(NobelMoonModel.GetCarRentalHeaderReport_Result)" />
+          <FunctionImport Name="GetTourPackageBookingHeaderReport" ReturnType="Collection(NobelMoonModel.GetTourPackageBookingHeaderReport_Result)" />
+          <EntitySet Name="Services" EntityType="NobelMoonModel.Services" />
+          <EntitySet Name="RequireLetter" EntityType="NobelMoonModel.RequireLetter" />
+          <EntitySet Name="ServicesOrRequirement" EntityType="NobelMoonModel.ServicesOrRequirement" />
+          <FunctionImport Name="SP_Backup">
+          <Parameter Name="Directory" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SP_GetTotalAmountByMonthly" ReturnType="Collection(NobelMoonModel.SP_GetTotalAmountByMonthly_Result)">
+          <Parameter Name="Transaction" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SP_GetTotalAmountByTransaction" ReturnType="Collection(NobelMoonModel.SP_GetTotalAmountByTransaction_Result1)">
+          <Parameter Name="Type" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="GetAirTicketHeaderReport" ReturnType="Collection(NobelMoonModel.GetAirTicketHeaderReport_Result)" />
+          <FunctionImport Name="GetPassportHeaderReport" ReturnType="Collection(NobelMoonModel.GetPassportHeaderReport_Result)" />
+          <EntitySet Name="CarRentalDetail" EntityType="NobelMoonModel.CarRentalDetail" />
+          <EntitySet Name="PayforCredit" EntityType="NobelMoonModel.PayforCredit" />
+          <FunctionImport Name="GetCashReport" ReturnType="Collection(NobelMoonModel.GetCashReport_Result)">
+            <Parameter Name="fdate" Mode="In" Type="DateTime" />
+            <Parameter Name="tdate" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="SP_CheckCreditList" ReturnType="Collection(NobelMoonModel.CheckCreditList_Result)">
+            <Parameter Name="fromDate" Mode="In" Type="DateTime" />
+            <Parameter Name="toDate" Mode="In" Type="DateTime" />
+            <Parameter Name="Customer" Mode="In" Type="String" />
+            <Parameter Name="Voucher" Mode="In" Type="String" />
+            <Parameter Name="Transaction" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <EntitySet Name="IncomeType" EntityType="NobelMoonModel.IncomeType" />
+          <FunctionImport Name="SP_ChkTransactionForSaleEditDelete" ReturnType="Collection(Int32)">
+            <Parameter Name="VoucherNo" Mode="In" Type="String" />
+            <Parameter Name="Tran" Mode="In" Type="String" />
+          </FunctionImport>
+        </EntityContainer>
+        <EntityType Name="Class">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+          <Property Name="Name" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="IsDelete" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="Currency">
+          <Key>
+            <PropertyRef Name="Code" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+          <Property Name="Code" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Description" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Rate" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="n1" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="t1" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="t2" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="User" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="IsDelete" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="HotelBooking">
+          <Key>
+            <PropertyRef Name="InvoiceNo" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="InvoiceNo" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="SystemDate" Type="DateTime" Precision="3" />
+          <Property Name="InvoiceDate" Type="DateTime" Precision="3" />
+          <Property Name="ArrivalDate" Type="DateTime" Precision="3" />
+          <Property Name="DepatureDate" Type="DateTime" Precision="3" />
+          <Property Name="ContactPerson" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="CompanyName" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="ContactPhone" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Subject" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Email" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Address" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="NoofPax" Type="Int32" />
+          <Property Name="NoofNight" Type="Int32" />
+          <Property Name="Remark" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="Currency" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Rate" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="PaymentTerm" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="TotalRoom" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="TotalAmount" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Balance" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="DiscountPercent" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Discount" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Status" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="User" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="IsDelete" Type="Boolean" />
+          <Property Type="String" Name="Hotel" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Decimal" Name="MMKBalance" Precision="18" Scale="0" />
+          <Property Type="String" Name="t1" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="t2" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="HotelRoom">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="InvoiceNo" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="SystemDate" Type="DateTime" Precision="3" />
+          <Property Name="RoomCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="RoomType" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Rate" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="NoofRoom" Type="Int32" />
+          <Property Name="Amount" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="User" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="IsDelete" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="PaymentTerm">
+          <Key>
+            <PropertyRef Name="Code" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+          <Property Name="Code" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Description" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="n1" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="n2" Type="Int32" />
+          <Property Name="t2" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="User" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="IsDelete" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="Role">
+          <Key>
+            <PropertyRef Name="Code" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+          <Property Name="Code" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Description" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="User" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="IsDelete" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="RoomType">
+          <Key>
+            <PropertyRef Name="Code" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+          <Property Name="Code" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Description" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Rate" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="User" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="IsDelete" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="Segment">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+          <Property Name="Code" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Name" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="IsDelete" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="Staff">
+          <Key>
+            <PropertyRef Name="Code" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+          <Property Name="Code" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Name" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="NRC" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Phone" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Email" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Address" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="User" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="IsDelete" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="TblUser">
+          <Key>
+            <PropertyRef Name="Code" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+          <Property Name="Code" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="StaffCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Role" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Password" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="User" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="IsDelete" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="TicketPassenger">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="InvoiceNo" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="PassengerName" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="TicketNo" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Fare" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="tax" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="TotalFare" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Type" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="User" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="t1" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="t2" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="IsDelete" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="Vehical">
+          <Key>
+            <PropertyRef Name="Name" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="DateTime" Name="CreatedDate" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Type" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="User" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="IsDelete" />
+        </EntityType>
+        <EntityType Name="Package">
+          <Key>
+            <PropertyRef Name="Code" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="DateTime" Name="CreatedDate" />
+          <Property Type="String" Name="Code" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Description" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Detail" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Type" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Decimal" Name="Price" Precision="18" Scale="0" />
+          <Property Type="String" Name="User" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="IsDelete" />
+        </EntityType>
+        <EntityType Name="PackageType">
+          <Key>
+            <PropertyRef Name="Code" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="DateTime" Name="CreatedDate" />
+          <Property Type="String" Name="Code" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Description" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="User" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="IsDelete" />
+        </EntityType>
+        <EntityType Name="TourPackage">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="DateTime" Name="SystemDate" />
+          <Property Type="String" Name="InvoiceNo" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="PackageCode" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="PackageDescription" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="Decimal" Name="Price" Precision="18" Scale="0" />
+          <Property Type="Int32" Name="NoofPax" />
+          <Property Type="Decimal" Name="Amount" Precision="18" Scale="0" />
+          <Property Type="String" Name="AirLine" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="FlightNo" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Status" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="User" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="IsDelete" />
+        </EntityType>
+        <EntityType Name="TicketBooking">
+          <Key>
+            <PropertyRef Name="InvoiceNo" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="InvoiceNo" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="SystemDate" />
+          <Property Type="DateTime" Name="Date" />
+          <Property Type="String" Name="ContactPerson" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CompanyName" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Terms" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Phone" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Email" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Address" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="NoSeat" />
+          <Property Type="Decimal" Name="Tax" Precision="18" Scale="0" />
+          <Property Type="Decimal" Name="Total" Precision="18" Scale="0" />
+          <Property Type="String" Name="Currency" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="Rate" />
+          <Property Type="String" Name="PaymentCode" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="PaymentDes" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="t1" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Type" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Status" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="User" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="IsDelete" />
+          <Property Type="Decimal" Name="MMKBalance" Precision="18" Scale="0" />
+          <Property Type="Boolean" Name="IsTransit" />
+          <Property Type="String" Name="t2" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="t3" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <ComplexType Name="GetHotelBookingHeaderReport_Result">
+          <Property Type="DateTime" Name="InvoiceDate" Nullable="true" Precision="23" />
+          <Property Type="String" Name="InvoiceNo" Nullable="false" MaxLength="50" />
+          <Property Type="DateTime" Name="ArrivalDate" Nullable="true" Precision="23" />
+          <Property Type="DateTime" Name="DepatureDate" Nullable="true" Precision="23" />
+          <Property Type="String" Name="ContactPerson" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="CompanyName" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="ContactPhone" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Email" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="NoofPax" Nullable="true" />
+          <Property Type="Int32" Name="NoofNight" Nullable="true" />
+          <Property Type="String" Name="Remark" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="Currency" Nullable="true" MaxLength="50" />
+          <Property Type="Decimal" Name="Rate" Nullable="true" Precision="18" Scale="0" />
+          <Property Type="String" Name="Code" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Description" Nullable="true" MaxLength="50" />
+          <Property Type="Decimal" Name="TotalRoom" Nullable="true" Precision="18" Scale="0" />
+          <Property Type="Decimal" Name="TotalAmount" Nullable="true" Precision="18" Scale="0" />
+          <Property Type="Decimal" Name="Balance" Nullable="true" Precision="18" Scale="0" />
+          <Property Type="Decimal" Name="DiscountPercent" Nullable="true" Precision="18" Scale="0" />
+          <Property Type="Decimal" Name="Discount" Nullable="true" Precision="18" Scale="0" />
+          <Property Type="String" Name="Name" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="Status" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="t2" Nullable="false" />
+        </ComplexType>
+        <EntityType Name="TicketFlight">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="InvoiceNo" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="SystemDate" />
+          <Property Type="String" Name="From" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="To" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="Date" />
+          <Property Type="DateTime" Name="Time" />
+          <Property Type="String" Name="Class" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="AirLine" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Flight" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="NoSeats" />
+          <Property Type="String" Name="User" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="IsDelete" />
+          <Property Type="DateTime" Name="ArrivalDate" />
+          <Property Type="DateTime" Name="ArrivalTime" />
+        </EntityType>
+        <EntityType Name="TourBooking">
+          <Key>
+            <PropertyRef Name="InvoiceNo" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="DateTime" Name="SystemDate" />
+          <Property Type="String" Name="InvoiceNo" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="InvoiceDate" />
+          <Property Type="DateTime" Name="ArrivalDate" />
+          <Property Type="DateTime" Name="DepatureDate" />
+          <Property Type="String" Name="ContactPerson" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CompanyName" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ContactPhone" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Email" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Address" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="MeetingPoint" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Currency" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="NoofNight" />
+          <Property Type="String" Name="Remark" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="Decimal" Name="Rate" Precision="18" Scale="0" />
+          <Property Type="String" Name="PaymentTerm" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Decimal" Name="TotalAmount" Precision="18" Scale="0" />
+          <Property Type="Int32" Name="Discount_Percent" />
+          <Property Type="Decimal" Name="Discount" Precision="18" Scale="0" />
+          <Property Type="Decimal" Name="Balance" Precision="18" Scale="0" />
+          <Property Type="String" Name="Type" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Status" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="User" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="IsDelete" />
+          <Property Type="Decimal" Name="MMKBalance" Precision="18" Scale="0" />
+          <Property Type="String" Name="t1" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="t2" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Hotel">
+          <Key>
+            <PropertyRef Name="Name" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="DateTime" Name="CreatedDate" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="StarRate" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="User" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="IsDelete" />
+        </EntityType>
+        <EntityType Name="VisaType">
+          <Key>
+            <PropertyRef Name="Description" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="DateTime" Name="CreatedDate" />
+          <Property Type="String" Name="Description" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="User" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="IsDelete" />
+        </EntityType>
+        <EntityType Name="PassportBooking">
+          <Key>
+            <PropertyRef Name="InvoiceNo" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="DateTime" Name="SystemDate" />
+          <Property Type="String" Name="InvoiceNo" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="InvoiceDate" />
+          <Property Type="String" Name="ContactPerson" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ContactPhone" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="PaymentTerm" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Type" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Currency" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="Decimal" Name="Rate" Precision="18" Scale="0" />
+          <Property Type="Int32" Name="TotalNo" />
+          <Property Type="Decimal" Name="TotalAmount" Precision="18" Scale="0" />
+          <Property Type="String" Name="Remark" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Status" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="User" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="IsDelete" />
+          <Property Type="Decimal" Name="MMKBalance" Precision="18" Scale="0" />
+          <Property Type="String" Name="t1" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="t2" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="PassportRequirement">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="InvoiceNo" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="SystemDate" />
+          <Property Type="String" Name="Description" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Name" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="NRC" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="User" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="IsDelete" />
+        </EntityType>
+        <EntityType Name="PassportPerson">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="InvoiceNo" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="SystemDate" />
+          <Property Type="String" Name="Name" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="DOB" />
+          <Property Type="String" Name="NRC" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Phone" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Requirements" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Address" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="Decimal" Name="Charges" Precision="18" Scale="0" />
+          <Property Type="String" Name="Status" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="User" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="IsDelete" />
+        </EntityType>
+        <EntityType Name="Authorization">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="DateTime" Name="SystemDate" />
+          <Property Type="String" Name="Code" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Description" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Staff" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="User" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="IsChecked" />
+        </EntityType>
+        <EntityType Name="Company">
+          <Key>
+            <PropertyRef Name="Name" />
+          </Key>
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Phone" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Fax" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Email" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Website" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Address" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Message" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Binary" Name="Logo" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="CarType">
+          <Key>
+            <PropertyRef Name="Code" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="DateTime" Name="CreatedDate" />
+          <Property Type="String" Name="Code" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Description" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="User" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="IsDelete" />
+        </EntityType>
+        <EntityType Name="Peroid">
+          <Key>
+            <PropertyRef Name="Code" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="DateTime" Name="CreatedDate" />
+          <Property Type="String" Name="Code" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Description" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="NoofDay" />
+          <Property Type="String" Name="User" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="IsDelete" />
+        </EntityType>
+        <EntityType Name="CarRentalBooking">
+          <Key>
+            <PropertyRef Name="InvoiceNo" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="DateTime" Name="SystemDate" />
+          <Property Type="String" Name="InvoiceNo" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="InvoiceDate" />
+          <Property Type="DateTime" Name="ArrivalDate" />
+          <Property Type="DateTime" Name="DepatureDate" />
+          <Property Type="String" Name="ContactPerson" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ContactPhone" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CompanyName" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Email" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Address" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Currency" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="Decimal" Name="Rate" Precision="18" Scale="0" />
+          <Property Type="String" Name="PaymentTerm" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Remark" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="Decimal" Name="TotalAmount" Precision="18" Scale="0" />
+          <Property Type="Decimal" Name="ExtraCharges" Precision="18" Scale="0" />
+          <Property Type="Decimal" Name="Balance" Precision="18" Scale="0" />
+          <Property Type="String" Name="Status" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="User" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="IsDelete" />
+          <Property Type="Decimal" Name="MMKBalance" Precision="18" Scale="0" />
+          <Property Type="String" Name="t1" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="t2" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <ComplexType Name="GetCarRentalHeaderReport_Result">
+          <Property Type="DateTime" Name="InvoiceDate" Nullable="true" Precision="23" />
+          <Property Type="DateTime" Name="DepatureDate" Nullable="true" Precision="23" />
+          <Property Type="DateTime" Name="ArrivalDate" Nullable="true" Precision="23" />
+          <Property Type="String" Name="InvoiceNo" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="ContactPerson" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="ContactPhone" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="CompanyName" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Email" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Address" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="Currency" Nullable="true" MaxLength="20" />
+          <Property Type="Decimal" Name="Rate" Nullable="true" Precision="18" Scale="0" />
+          <Property Type="String" Name="Name" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="PaymentTerm" Nullable="true" MaxLength="50" />
+          <Property Type="Decimal" Name="ExtraCharges" Nullable="true" Precision="18" Scale="0" />
+          <Property Type="Decimal" Name="TotalAmount" Nullable="true" Precision="18" Scale="0" />
+          <Property Type="Decimal" Name="Balance" Nullable="true" Precision="18" Scale="0" />
+          <Property Type="String" Name="Status" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="t2" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="GetTourPackageBookingHeaderReport_Result">
+          <Property Type="DateTime" Name="InvoiceDate" Nullable="true" Precision="23" />
+          <Property Type="String" Name="InvoiceNo" Nullable="false" MaxLength="50" />
+          <Property Type="DateTime" Name="ArrivalDate" Nullable="true" Precision="23" />
+          <Property Type="DateTime" Name="DepatureDate" Nullable="true" Precision="23" />
+          <Property Type="String" Name="ContactPerson" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="CompanyName" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="ContactPhone" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="MeetingPoint" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="Email" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="NoofNight" Nullable="true" />
+          <Property Type="String" Name="Remark" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="Currency" Nullable="true" MaxLength="50" />
+          <Property Type="Decimal" Name="Rate" Nullable="true" Precision="18" Scale="0" />
+          <Property Type="String" Name="Code" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Description" Nullable="true" MaxLength="50" />
+          <Property Type="Decimal" Name="TotalAmount" Nullable="true" Precision="18" Scale="0" />
+          <Property Type="Decimal" Name="Balance" Nullable="true" Precision="18" Scale="0" />
+          <Property Type="Int32" Name="Discount_Percent" Nullable="true" />
+          <Property Type="Decimal" Name="Discount" Nullable="true" Precision="18" Scale="0" />
+          <Property Type="String" Name="Name" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="Status" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="t2" Nullable="false" />
+        </ComplexType>
+        <EntityType Name="Services">
+          <Key>
+            <PropertyRef Name="Code" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="DateTime" Name="CreateDate" />
+          <Property Type="String" Name="Code" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Description" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Transaction" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="User" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="IsDelete" />
+        </EntityType>
+        <EntityType Name="RequireLetter">
+          <Key>
+            <PropertyRef Name="Code" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="DateTime" Name="CreatedDate" />
+          <Property Type="String" Name="Code" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Description" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Type" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="User" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="IsDelete" />
+        </EntityType>
+        <EntityType Name="ServicesOrRequirement">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="DateTime" Name="CreatedDate" />
+          <Property Type="String" Name="InvoiceNo" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Transaction" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Code" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Description" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="User" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="IsDelete" />
+        </EntityType>
+        <ComplexType Name="SP_GetTotalAmountByMonthly_Result">
+          <Property Type="String" Name="Month_Name" Nullable="true" MaxLength="30" />
+          <Property Type="Decimal" Name="SalesVolumn" Nullable="true" Precision="38" Scale="0" />
+        </ComplexType>
+        <ComplexType Name="SP_GetTotalAmountByTransaction_Result1">
+          <Property Type="String" Name="Transaction" Nullable="false" MaxLength="9" />
+          <Property Type="Decimal" Name="TotalAmount" Nullable="true" Precision="38" Scale="0" />
+        </ComplexType>
+        <ComplexType Name="GetAirTicketHeaderReport_Result">
+          <Property Type="DateTime" Name="Date" Nullable="true" Precision="23" />
+          <Property Type="String" Name="InvoiceNo" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="ContactPerson" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="CompanyName" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="Phone" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="Email" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="Address" Nullable="true" MaxLength="500" />
+          <Property Type="Int32" Name="NoSeat" Nullable="true" />
+          <Property Type="Decimal" Name="Tax" Nullable="true" Precision="18" Scale="0" />
+          <Property Type="Decimal" Name="Total" Nullable="true" Precision="18" Scale="0" />
+          <Property Type="String" Name="Currency" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="Rate" Nullable="true" />
+          <Property Type="String" Name="Name" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="PaymentCode" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="PaymentDes" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="Status" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="t3" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="GetPassportHeaderReport_Result">
+          <Property Type="DateTime" Name="InvoiceDate" Nullable="true" Precision="23" />
+          <Property Type="String" Name="InvoiceNo" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="ContactPerson" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="ContactPhone" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Type" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="Currency" Nullable="true" MaxLength="20" />
+          <Property Type="Decimal" Name="Rate" Nullable="true" Precision="18" Scale="0" />
+          <Property Type="String" Name="Name" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="PaymentTerm" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="TotalNo" Nullable="true" />
+          <Property Type="Decimal" Name="TotalAmount" Nullable="true" Precision="18" Scale="0" />
+          <Property Type="String" Name="Status" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="t2" Nullable="false" />
+        </ComplexType>
+        <EntityType Name="CarRentalDetail">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="DateTime" Name="SystemDate" />
+          <Property Type="String" Name="InvoiceNo" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CarType" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Peroid" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="Decimal" Name="Amount" Precision="18" Scale="0" />
+          <Property Type="String" Name="CarNo" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Status" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="User" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="IsDelete" />
+        </EntityType>
+        <EntityType Name="PayforCredit">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="DateTime" Name="CreatedDate" />
+          <Property Type="DateTime" Name="Date" />
+          <Property Type="String" Name="VoucherNo" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="InvoiceNo" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ContactPerson" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Currency" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Decimal" Name="Rate" Precision="18" Scale="0" />
+          <Property Type="Decimal" Name="CreditAmount" Precision="18" Scale="0" />
+          <Property Type="Decimal" Name="Amount" Precision="18" Scale="0" />
+          <Property Type="Decimal" Name="MMKBalance" Precision="18" Scale="0" />
+          <Property Type="String" Name="Remark" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Transaction" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="UserID" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="IsDelete" />
+        </EntityType>
+        <ComplexType Name="GetCashReport_Result">
+          <Property Type="Int32" Name="No" Nullable="false" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="23" />
+          <Property Type="Decimal" Name="Amount" Nullable="true" Precision="38" Scale="0" />
+          <Property Type="String" Name="Currency" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="CheckCreditList_Result" >
+          <Property Type="DateTime" Name="Date" Nullable="false" />
+          <Property Type="String" Name="VoucherNo" Nullable="false" />
+          <Property Type="String" Name="ContactPerson" Nullable="false" />
+          <Property Type="String" Name="CompanyName" Nullable="false" />
+          <Property Type="String" Name="Transaction" Nullable="false" />
+          <Property Type="Decimal" Name="Amount" Nullable="false" />
+          <Property Type="String" Name="Currency" Nullable="false" />
+          <Property Type="Decimal" Name="PaidAmount" Nullable="false" />
+          <Property Type="Int32" Name="Peroid" Nullable="false" />
+        </ComplexType>
+        <EntityType Name="IncomeType">
+          <Key>
+            <PropertyRef Name="Code" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="DateTime" Name="CreatedDate" Nullable="false" />
+          <Property Type="String" Name="Code" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Description" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="User" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="IsDelete" Nullable="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="NobelMoonModelStoreContainer" CdmEntityContainer="NobelMoonEntities1">
+          <EntitySetMapping Name="Classes">
+            <EntityTypeMapping TypeName="NobelMoonModel.Class">
+              <MappingFragment StoreEntitySet="Class">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Currencies">
+            <EntityTypeMapping TypeName="NobelMoonModel.Currency">
+              <MappingFragment StoreEntitySet="Currency">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Rate" ColumnName="Rate" />
+                <ScalarProperty Name="n1" ColumnName="n1" />
+                <ScalarProperty Name="t1" ColumnName="t1" />
+                <ScalarProperty Name="t2" ColumnName="t2" />
+                <ScalarProperty Name="User" ColumnName="User" />
+                <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="HotelBookings">
+            <EntityTypeMapping TypeName="NobelMoonModel.HotelBooking">
+              <MappingFragment StoreEntitySet="HotelBooking">
+                <ScalarProperty Name="t2" ColumnName="t2" />
+                <ScalarProperty Name="t1" ColumnName="t1" />
+                <ScalarProperty Name="MMKBalance" ColumnName="MMKBalance" />
+                <ScalarProperty Name="Hotel" ColumnName="Hotel" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="InvoiceNo" ColumnName="InvoiceNo" />
+                <ScalarProperty Name="SystemDate" ColumnName="SystemDate" />
+                <ScalarProperty Name="InvoiceDate" ColumnName="InvoiceDate" />
+                <ScalarProperty Name="ArrivalDate" ColumnName="ArrivalDate" />
+                <ScalarProperty Name="DepatureDate" ColumnName="DepatureDate" />
+                <ScalarProperty Name="ContactPerson" ColumnName="ContactPerson" />
+                <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+                <ScalarProperty Name="ContactPhone" ColumnName="ContactPhone" />
+                <ScalarProperty Name="Subject" ColumnName="Subject" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="NoofPax" ColumnName="NoofPax" />
+                <ScalarProperty Name="NoofNight" ColumnName="NoofNight" />
+                <ScalarProperty Name="Remark" ColumnName="Remark" />
+                <ScalarProperty Name="Currency" ColumnName="Currency" />
+                <ScalarProperty Name="Rate" ColumnName="Rate" />
+                <ScalarProperty Name="PaymentTerm" ColumnName="PaymentTerm" />
+                <ScalarProperty Name="TotalRoom" ColumnName="TotalRoom" />
+                <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
+                <ScalarProperty Name="Balance" ColumnName="Balance" />
+                <ScalarProperty Name="DiscountPercent" ColumnName="DiscountPercent" />
+                <ScalarProperty Name="Discount" ColumnName="Discount" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="User" ColumnName="User" />
+                <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="HotelRooms">
+            <EntityTypeMapping TypeName="NobelMoonModel.HotelRoom">
+              <MappingFragment StoreEntitySet="HotelRoom">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="InvoiceNo" ColumnName="InvoiceNo" />
+                <ScalarProperty Name="SystemDate" ColumnName="SystemDate" />
+                <ScalarProperty Name="RoomCode" ColumnName="RoomCode" />
+                <ScalarProperty Name="RoomType" ColumnName="RoomType" />
+                <ScalarProperty Name="Rate" ColumnName="Rate" />
+                <ScalarProperty Name="NoofRoom" ColumnName="NoofRoom" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="User" ColumnName="User" />
+                <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PaymentTerms">
+            <EntityTypeMapping TypeName="NobelMoonModel.PaymentTerm">
+              <MappingFragment StoreEntitySet="PaymentTerm">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="n1" ColumnName="n1" />
+                <ScalarProperty Name="n2" ColumnName="n2" />
+                <ScalarProperty Name="t2" ColumnName="t2" />
+                <ScalarProperty Name="User" ColumnName="User" />
+                <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Roles">
+            <EntityTypeMapping TypeName="NobelMoonModel.Role">
+              <MappingFragment StoreEntitySet="Role">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="User" ColumnName="User" />
+                <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RoomTypes">
+            <EntityTypeMapping TypeName="NobelMoonModel.RoomType">
+              <MappingFragment StoreEntitySet="RoomType">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Rate" ColumnName="Rate" />
+                <ScalarProperty Name="User" ColumnName="User" />
+                <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Segments">
+            <EntityTypeMapping TypeName="NobelMoonModel.Segment">
+              <MappingFragment StoreEntitySet="Segment">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Staffs">
+            <EntityTypeMapping TypeName="NobelMoonModel.Staff">
+              <MappingFragment StoreEntitySet="Staff">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="NRC" ColumnName="NRC" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="User" ColumnName="User" />
+                <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblUsers">
+            <EntityTypeMapping TypeName="NobelMoonModel.TblUser">
+              <MappingFragment StoreEntitySet="TblUser">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="StaffCode" ColumnName="StaffCode" />
+                <ScalarProperty Name="Role" ColumnName="Role" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="User" ColumnName="User" />
+                <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TicketPassengers">
+            <EntityTypeMapping TypeName="NobelMoonModel.TicketPassenger">
+              <MappingFragment StoreEntitySet="TicketPassenger">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="InvoiceNo" ColumnName="InvoiceNo" />
+                <ScalarProperty Name="PassengerName" ColumnName="PassengerName" />
+                <ScalarProperty Name="TicketNo" ColumnName="TicketNo" />
+                <ScalarProperty Name="Fare" ColumnName="Fare" />
+                <ScalarProperty Name="tax" ColumnName="tax" />
+                <ScalarProperty Name="TotalFare" ColumnName="TotalFare" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="User" ColumnName="User" />
+                <ScalarProperty Name="t1" ColumnName="t1" />
+                <ScalarProperty Name="t2" ColumnName="t2" />
+                <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="GetFormNo" FunctionName="NobelMoonModel.Store.GetFormNo" />
+          <EntitySetMapping Name="Vehicals">
+            <EntityTypeMapping TypeName="NobelMoonModel.Vehical">
+              <MappingFragment StoreEntitySet="Vehical">
+                <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+                <ScalarProperty Name="User" ColumnName="User" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Packages">
+            <EntityTypeMapping TypeName="NobelMoonModel.Package">
+              <MappingFragment StoreEntitySet="Package">
+                <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+                <ScalarProperty Name="User" ColumnName="User" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Detail" ColumnName="Detail" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PackageTypes">
+            <EntityTypeMapping TypeName="NobelMoonModel.PackageType">
+              <MappingFragment StoreEntitySet="PackageType">
+                <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+                <ScalarProperty Name="User" ColumnName="User" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TourPackages">
+            <EntityTypeMapping TypeName="NobelMoonModel.TourPackage">
+              <MappingFragment StoreEntitySet="TourPackage">
+                <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+                <ScalarProperty Name="User" ColumnName="User" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="FlightNo" ColumnName="FlightNo" />
+                <ScalarProperty Name="AirLine" ColumnName="AirLine" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="NoofPax" ColumnName="NoofPax" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="PackageDescription" ColumnName="PackageDescription" />
+                <ScalarProperty Name="PackageCode" ColumnName="PackageCode" />
+                <ScalarProperty Name="InvoiceNo" ColumnName="InvoiceNo" />
+                <ScalarProperty Name="SystemDate" ColumnName="SystemDate" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TicketBookings">
+            <EntityTypeMapping TypeName="NobelMoonModel.TicketBooking">
+              <MappingFragment StoreEntitySet="TicketBooking">
+                <ScalarProperty Name="t3" ColumnName="t3" />
+                <ScalarProperty Name="t2" ColumnName="t2" />
+                <ScalarProperty Name="IsTransit" ColumnName="IsTransit" />
+                <ScalarProperty Name="MMKBalance" ColumnName="MMKBalance" />
+                <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+                <ScalarProperty Name="User" ColumnName="User" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="t1" ColumnName="t1" />
+                <ScalarProperty Name="PaymentDes" ColumnName="PaymentDes" />
+                <ScalarProperty Name="PaymentCode" ColumnName="PaymentCode" />
+                <ScalarProperty Name="Rate" ColumnName="Rate" />
+                <ScalarProperty Name="Currency" ColumnName="Currency" />
+                <ScalarProperty Name="Total" ColumnName="Total" />
+                <ScalarProperty Name="Tax" ColumnName="Tax" />
+                <ScalarProperty Name="NoSeat" ColumnName="NoSeat" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Terms" ColumnName="Terms" />
+                <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+                <ScalarProperty Name="ContactPerson" ColumnName="ContactPerson" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="SystemDate" ColumnName="SystemDate" />
+                <ScalarProperty Name="InvoiceNo" ColumnName="InvoiceNo" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="GetHotelBookingHeaderReport" FunctionName="NobelMoonModel.Store.GetHotelBookingHeaderReport">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="NobelMoonModel.GetHotelBookingHeaderReport_Result">
+                <ScalarProperty Name="InvoiceDate" ColumnName="InvoiceDate" />
+                <ScalarProperty Name="InvoiceNo" ColumnName="InvoiceNo" />
+                <ScalarProperty Name="ArrivalDate" ColumnName="ArrivalDate" />
+                <ScalarProperty Name="DepatureDate" ColumnName="DepatureDate" />
+                <ScalarProperty Name="ContactPerson" ColumnName="ContactPerson" />
+                <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+                <ScalarProperty Name="ContactPhone" ColumnName="ContactPhone" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="NoofPax" ColumnName="NoofPax" />
+                <ScalarProperty Name="NoofNight" ColumnName="NoofNight" />
+                <ScalarProperty Name="Remark" ColumnName="Remark" />
+                <ScalarProperty Name="Currency" ColumnName="Currency" />
+                <ScalarProperty Name="Rate" ColumnName="Rate" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="TotalRoom" ColumnName="TotalRoom" />
+                <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
+                <ScalarProperty Name="Balance" ColumnName="Balance" />
+                <ScalarProperty Name="DiscountPercent" ColumnName="DiscountPercent" />
+                <ScalarProperty Name="Discount" ColumnName="Discount" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <EntitySetMapping Name="TicketFlights">
+            <EntityTypeMapping TypeName="NobelMoonModel.TicketFlight">
+              <MappingFragment StoreEntitySet="TicketFlight">
+                <ScalarProperty Name="ArrivalTime" ColumnName="ArrivalTime" />
+                <ScalarProperty Name="ArrivalDate" ColumnName="ArrivalDate" />
+                <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+                <ScalarProperty Name="User" ColumnName="User" />
+                <ScalarProperty Name="NoSeats" ColumnName="NoSeats" />
+                <ScalarProperty Name="Flight" ColumnName="Flight" />
+                <ScalarProperty Name="AirLine" ColumnName="AirLine" />
+                <ScalarProperty Name="Class" ColumnName="Class" />
+                <ScalarProperty Name="Time" ColumnName="Time" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="To" ColumnName="To" />
+                <ScalarProperty Name="From" ColumnName="From" />
+                <ScalarProperty Name="SystemDate" ColumnName="SystemDate" />
+                <ScalarProperty Name="InvoiceNo" ColumnName="InvoiceNo" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TourBookings">
+            <EntityTypeMapping TypeName="NobelMoonModel.TourBooking">
+              <MappingFragment StoreEntitySet="TourBooking">
+                <ScalarProperty Name="t2" ColumnName="t2" />
+                <ScalarProperty Name="t1" ColumnName="t1" />
+                <ScalarProperty Name="MMKBalance" ColumnName="MMKBalance" />
+                <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+                <ScalarProperty Name="User" ColumnName="User" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Balance" ColumnName="Balance" />
+                <ScalarProperty Name="Discount" ColumnName="Discount" />
+                <ScalarProperty Name="Discount_Percent" ColumnName="Discount Percent" />
+                <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
+                <ScalarProperty Name="PaymentTerm" ColumnName="PaymentTerm" />
+                <ScalarProperty Name="Rate" ColumnName="Rate" />
+                <ScalarProperty Name="Remark" ColumnName="Remark" />
+                <ScalarProperty Name="NoofNight" ColumnName="NoofNight" />
+                <ScalarProperty Name="Currency" ColumnName="Currency" />
+                <ScalarProperty Name="MeetingPoint" ColumnName="MeetingPoint" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="ContactPhone" ColumnName="ContactPhone" />
+                <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+                <ScalarProperty Name="ContactPerson" ColumnName="ContactPerson" />
+                <ScalarProperty Name="DepatureDate" ColumnName="DepatureDate" />
+                <ScalarProperty Name="ArrivalDate" ColumnName="ArrivalDate" />
+                <ScalarProperty Name="InvoiceDate" ColumnName="InvoiceDate" />
+                <ScalarProperty Name="InvoiceNo" ColumnName="InvoiceNo" />
+                <ScalarProperty Name="SystemDate" ColumnName="SystemDate" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Hotels">
+            <EntityTypeMapping TypeName="NobelMoonModel.Hotel">
+              <MappingFragment StoreEntitySet="Hotel">
+                <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+                <ScalarProperty Name="User" ColumnName="User" />
+                <ScalarProperty Name="StarRate" ColumnName="StarRate" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="VisaTypes">
+            <EntityTypeMapping TypeName="NobelMoonModel.VisaType">
+              <MappingFragment StoreEntitySet="VisaType">
+                <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+                <ScalarProperty Name="User" ColumnName="User" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PassportBookings">
+            <EntityTypeMapping TypeName="NobelMoonModel.PassportBooking">
+              <MappingFragment StoreEntitySet="PassportBooking">
+                <ScalarProperty Name="t2" ColumnName="t2" />
+                <ScalarProperty Name="t1" ColumnName="t1" />
+                <ScalarProperty Name="MMKBalance" ColumnName="MMKBalance" />
+                <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+                <ScalarProperty Name="User" ColumnName="User" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Remark" ColumnName="Remark" />
+                <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
+                <ScalarProperty Name="TotalNo" ColumnName="TotalNo" />
+                <ScalarProperty Name="Rate" ColumnName="Rate" />
+                <ScalarProperty Name="Currency" ColumnName="Currency" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="PaymentTerm" ColumnName="PaymentTerm" />
+                <ScalarProperty Name="ContactPhone" ColumnName="ContactPhone" />
+                <ScalarProperty Name="ContactPerson" ColumnName="ContactPerson" />
+                <ScalarProperty Name="InvoiceDate" ColumnName="InvoiceDate" />
+                <ScalarProperty Name="InvoiceNo" ColumnName="InvoiceNo" />
+                <ScalarProperty Name="SystemDate" ColumnName="SystemDate" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PassportRequirements">
+            <EntityTypeMapping TypeName="NobelMoonModel.PassportRequirement">
+              <MappingFragment StoreEntitySet="PassportRequirement">
+                <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+                <ScalarProperty Name="User" ColumnName="User" />
+                <ScalarProperty Name="NRC" ColumnName="NRC" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="SystemDate" ColumnName="SystemDate" />
+                <ScalarProperty Name="InvoiceNo" ColumnName="InvoiceNo" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PassportPersons">
+            <EntityTypeMapping TypeName="NobelMoonModel.PassportPerson">
+              <MappingFragment StoreEntitySet="PassportPerson">
+                <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+                <ScalarProperty Name="User" ColumnName="User" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Charges" ColumnName="Charges" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Requirements" ColumnName="Requirements" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="NRC" ColumnName="NRC" />
+                <ScalarProperty Name="DOB" ColumnName="DOB" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="SystemDate" ColumnName="SystemDate" />
+                <ScalarProperty Name="InvoiceNo" ColumnName="InvoiceNo" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Authorizations">
+            <EntityTypeMapping TypeName="NobelMoonModel.Authorization">
+              <MappingFragment StoreEntitySet="Authorization">
+                <ScalarProperty Name="IsChecked" ColumnName="IsChecked" />
+                <ScalarProperty Name="User" ColumnName="User" />
+                <ScalarProperty Name="Staff" ColumnName="Staff" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="SystemDate" ColumnName="SystemDate" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Company">
+            <EntityTypeMapping TypeName="NobelMoonModel.Company">
+              <MappingFragment StoreEntitySet="Company">
+                <ScalarProperty Name="Logo" ColumnName="Logo" />
+                <ScalarProperty Name="Message" ColumnName="Message" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Website" ColumnName="Website" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Fax" ColumnName="Fax" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CarType">
+            <EntityTypeMapping TypeName="NobelMoonModel.CarType">
+              <MappingFragment StoreEntitySet="CarType">
+                <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+                <ScalarProperty Name="User" ColumnName="User" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Peroid">
+            <EntityTypeMapping TypeName="NobelMoonModel.Peroid">
+              <MappingFragment StoreEntitySet="Peroid">
+                <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+                <ScalarProperty Name="User" ColumnName="User" />
+                <ScalarProperty Name="NoofDay" ColumnName="NoofDay" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CarRentalBooking">
+            <EntityTypeMapping TypeName="NobelMoonModel.CarRentalBooking">
+              <MappingFragment StoreEntitySet="CarRentalBooking">
+                <ScalarProperty Name="t2" ColumnName="t2" />
+                <ScalarProperty Name="t1" ColumnName="t1" />
+                <ScalarProperty Name="MMKBalance" ColumnName="MMKBalance" />
+                <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+                <ScalarProperty Name="User" ColumnName="User" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Balance" ColumnName="Balance" />
+                <ScalarProperty Name="ExtraCharges" ColumnName="ExtraCharges" />
+                <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
+                <ScalarProperty Name="Remark" ColumnName="Remark" />
+                <ScalarProperty Name="PaymentTerm" ColumnName="PaymentTerm" />
+                <ScalarProperty Name="Rate" ColumnName="Rate" />
+                <ScalarProperty Name="Currency" ColumnName="Currency" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+                <ScalarProperty Name="ContactPhone" ColumnName="ContactPhone" />
+                <ScalarProperty Name="ContactPerson" ColumnName="ContactPerson" />
+                <ScalarProperty Name="DepatureDate" ColumnName="DepatureDate" />
+                <ScalarProperty Name="ArrivalDate" ColumnName="ArrivalDate" />
+                <ScalarProperty Name="InvoiceDate" ColumnName="InvoiceDate" />
+                <ScalarProperty Name="InvoiceNo" ColumnName="InvoiceNo" />
+                <ScalarProperty Name="SystemDate" ColumnName="SystemDate" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="GetCarRentalHeaderReport" FunctionName="NobelMoonModel.Store.GetCarRentalHeaderReport">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="NobelMoonModel.GetCarRentalHeaderReport_Result">
+                <ScalarProperty Name="InvoiceDate" ColumnName="InvoiceDate" />
+                <ScalarProperty Name="DepatureDate" ColumnName="DepatureDate" />
+                <ScalarProperty Name="ArrivalDate" ColumnName="ArrivalDate" />
+                <ScalarProperty Name="InvoiceNo" ColumnName="InvoiceNo" />
+                <ScalarProperty Name="ContactPerson" ColumnName="ContactPerson" />
+                <ScalarProperty Name="ContactPhone" ColumnName="ContactPhone" />
+                <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Currency" ColumnName="Currency" />
+                <ScalarProperty Name="Rate" ColumnName="Rate" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="PaymentTerm" ColumnName="PaymentTerm" />
+                <ScalarProperty Name="ExtraCharges" ColumnName="ExtraCharges" />
+                <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
+                <ScalarProperty Name="Balance" ColumnName="Balance" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetTourPackageBookingHeaderReport" FunctionName="NobelMoonModel.Store.GetTourPackageBookingHeaderReport">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="NobelMoonModel.GetTourPackageBookingHeaderReport_Result">
+                <ScalarProperty Name="InvoiceDate" ColumnName="InvoiceDate" />
+                <ScalarProperty Name="InvoiceNo" ColumnName="InvoiceNo" />
+                <ScalarProperty Name="ArrivalDate" ColumnName="ArrivalDate" />
+                <ScalarProperty Name="DepatureDate" ColumnName="DepatureDate" />
+                <ScalarProperty Name="ContactPerson" ColumnName="ContactPerson" />
+                <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+                <ScalarProperty Name="ContactPhone" ColumnName="ContactPhone" />
+                <ScalarProperty Name="MeetingPoint" ColumnName="MeetingPoint" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="NoofNight" ColumnName="NoofNight" />
+                <ScalarProperty Name="Remark" ColumnName="Remark" />
+                <ScalarProperty Name="Currency" ColumnName="Currency" />
+                <ScalarProperty Name="Rate" ColumnName="Rate" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
+                <ScalarProperty Name="Balance" ColumnName="Balance" />
+                <ScalarProperty Name="Discount_Percent" ColumnName="Discount Percent" />
+                <ScalarProperty Name="Discount" ColumnName="Discount" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <EntitySetMapping Name="Services">
+            <EntityTypeMapping TypeName="NobelMoonModel.Services">
+              <MappingFragment StoreEntitySet="Services">
+                <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+                <ScalarProperty Name="User" ColumnName="User" />
+                <ScalarProperty Name="Transaction" ColumnName="Transaction" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RequireLetter">
+            <EntityTypeMapping TypeName="NobelMoonModel.RequireLetter">
+              <MappingFragment StoreEntitySet="RequireLetter">
+                <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+                <ScalarProperty Name="User" ColumnName="User" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ServicesOrRequirement">
+            <EntityTypeMapping TypeName="NobelMoonModel.ServicesOrRequirement">
+              <MappingFragment StoreEntitySet="ServicesOrRequirement">
+                <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+                <ScalarProperty Name="User" ColumnName="User" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="Transaction" ColumnName="Transaction" />
+                <ScalarProperty Name="InvoiceNo" ColumnName="InvoiceNo" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="SP_Backup" FunctionName="NobelMoonModel.Store.SP_Backup" />
+          <FunctionImportMapping FunctionImportName="SP_GetTotalAmountByMonthly" FunctionName="NobelMoonModel.Store.SP_GetTotalAmountByMonthly">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="NobelMoonModel.SP_GetTotalAmountByMonthly_Result">
+                <ScalarProperty Name="Month_Name" ColumnName="Month Name" />
+                <ScalarProperty Name="SalesVolumn" ColumnName="SalesVolumn" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SP_GetTotalAmountByTransaction" FunctionName="NobelMoonModel.Store.SP_GetTotalAmountByTransaction">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="NobelMoonModel.SP_GetTotalAmountByTransaction_Result1">
+                <ScalarProperty Name="Transaction" ColumnName="Transaction" />
+                <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetAirTicketHeaderReport" FunctionName="NobelMoonModel.Store.GetAirTicketHeaderReport">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="NobelMoonModel.GetAirTicketHeaderReport_Result">
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="InvoiceNo" ColumnName="InvoiceNo" />
+                <ScalarProperty Name="ContactPerson" ColumnName="ContactPerson" />
+                <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="NoSeat" ColumnName="NoSeat" />
+                <ScalarProperty Name="Tax" ColumnName="Tax" />
+                <ScalarProperty Name="Total" ColumnName="Total" />
+                <ScalarProperty Name="Currency" ColumnName="Currency" />
+                <ScalarProperty Name="Rate" ColumnName="Rate" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="PaymentCode" ColumnName="PaymentCode" />
+                <ScalarProperty Name="PaymentDes" ColumnName="PaymentDes" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetPassportHeaderReport" FunctionName="NobelMoonModel.Store.GetPassportHeaderReport">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="NobelMoonModel.GetPassportHeaderReport_Result">
+                <ScalarProperty Name="InvoiceDate" ColumnName="InvoiceDate" />
+                <ScalarProperty Name="InvoiceNo" ColumnName="InvoiceNo" />
+                <ScalarProperty Name="ContactPerson" ColumnName="ContactPerson" />
+                <ScalarProperty Name="ContactPhone" ColumnName="ContactPhone" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Currency" ColumnName="Currency" />
+                <ScalarProperty Name="Rate" ColumnName="Rate" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="PaymentTerm" ColumnName="PaymentTerm" />
+                <ScalarProperty Name="TotalNo" ColumnName="TotalNo" />
+                <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <EntitySetMapping Name="CarRentalDetail">
+            <EntityTypeMapping TypeName="NobelMoonModel.CarRentalDetail">
+              <MappingFragment StoreEntitySet="CarRentalDetail">
+                <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+                <ScalarProperty Name="User" ColumnName="User" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="CarNo" ColumnName="CarNo" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="Peroid" ColumnName="Peroid" />
+                <ScalarProperty Name="CarType" ColumnName="CarType" />
+                <ScalarProperty Name="InvoiceNo" ColumnName="InvoiceNo" />
+                <ScalarProperty Name="SystemDate" ColumnName="SystemDate" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PayforCredit">
+            <EntityTypeMapping TypeName="NobelMoonModel.PayforCredit">
+              <MappingFragment StoreEntitySet="PayforCredit">
+                <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="Transaction" ColumnName="Transaction" />
+                <ScalarProperty Name="Remark" ColumnName="Remark" />
+                <ScalarProperty Name="MMKBalance" ColumnName="MMKBalance" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="CreditAmount" ColumnName="CreditAmount" />
+                <ScalarProperty Name="Rate" ColumnName="Rate" />
+                <ScalarProperty Name="Currency" ColumnName="Currency" />
+                <ScalarProperty Name="ContactPerson" ColumnName="ContactPerson" />
+                <ScalarProperty Name="InvoiceNo" ColumnName="InvoiceNo" />
+                <ScalarProperty Name="VoucherNo" ColumnName="VoucherNo" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="GetCashReport" FunctionName="NobelMoonModel.Store.GetCashReport">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="NobelMoonModel.GetCashReport_Result">
+                <ScalarProperty Name="No" ColumnName="No" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="Currency" ColumnName="Currency" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SP_CheckCreditList" FunctionName="NobelMoonModel.Store.SP_CheckCreditList">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="NobelMoonModel.CheckCreditList_Result">
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="VoucherNo" ColumnName="VoucherNo" />
+                <ScalarProperty Name="ContactPerson" ColumnName="ContactPerson" />
+                <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+                <ScalarProperty Name="Transaction" ColumnName="Transaction" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="Currency" ColumnName="Currency" />
+                <ScalarProperty Name="PaidAmount" ColumnName="PaidAmount" />
+                <ScalarProperty Name="Peroid" ColumnName="Peroid" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <EntitySetMapping Name="IncomeType">
+            <EntityTypeMapping TypeName="NobelMoonModel.IncomeType">
+              <MappingFragment StoreEntitySet="IncomeType">
+                <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+                <ScalarProperty Name="User" ColumnName="User" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="SP_ChkTransactionForSaleEditDelete" FunctionName="NobelMoonModel.Store.SP_ChkTransactionForSaleEditDelete" />
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="False" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Default" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="NobelMoon">
+        <EntityTypeShape EntityType="NobelMoonModel.Class" Width="1.5" PointX="0.75" PointY="0.75" Height="2.055441080729167" IsExpanded="true" />
+        <EntityTypeShape EntityType="NobelMoonModel.Currency" Width="1.5" PointX="2.75" PointY="0.75" Height="3.4384977213541656" IsExpanded="true" />
+        <EntityTypeShape EntityType="NobelMoonModel.HotelBooking" Width="1.5" PointX="4.75" PointY="0.75" Height="7.1266487630208335" IsExpanded="true" />
+        <EntityTypeShape EntityType="NobelMoonModel.HotelRoom" Width="1.5" PointX="0.75" PointY="5.75" Height="3.4384977213541656" IsExpanded="true" />
+        <EntityTypeShape EntityType="NobelMoonModel.PaymentTerm" Width="1.5" PointX="6.75" PointY="0.75" Height="3.2079882812499996" IsExpanded="true" />
+        <EntityTypeShape EntityType="NobelMoonModel.Role" Width="1.5" PointX="6.75" PointY="4.75" Height="2.5164599609374996" IsExpanded="true" />
+        <EntityTypeShape EntityType="NobelMoonModel.RoomType" Width="1.5" PointX="8.75" PointY="0.75" Height="2.7469694010416674" IsExpanded="true" />
+        <EntityTypeShape EntityType="NobelMoonModel.Segment" Width="1.5" PointX="2.75" PointY="8.75" Height="2.2859505208333317" IsExpanded="true" />
+        <EntityTypeShape EntityType="NobelMoonModel.Staff" Width="1.5" PointX="8.75" PointY="4.75" Height="3.4384977213541674" IsExpanded="true" />
+        <EntityTypeShape EntityType="NobelMoonModel.TblUser" Width="1.5" PointX="4.75" PointY="8.75" Height="2.9774788411458353" IsExpanded="true" />
+        <EntityTypeShape EntityType="NobelMoonModel.TicketPassenger" Width="1.5" PointX="10.75" PointY="0.75" Height="3.8995166015625031" IsExpanded="true" />
+        <EntityTypeShape EntityType="NobelMoonModel.Vehical" Width="1.5" PointX="0.75" PointY="11.75" Height="2.3631090861558945" />
+        <EntityTypeShape EntityType="NobelMoonModel.Package" Width="1.5" PointX="11.375" PointY="5.75" Height="3.0035204482078584" />
+        <EntityTypeShape EntityType="NobelMoonModel.PackageType" Width="1.5" PointX="11.375" PointY="9.75" Height="2.3631090861558945" />
+        <EntityTypeShape EntityType="NobelMoonModel.TourPackage" Width="1.5" PointX="13.375" PointY="0.75" Height="3.8574022642771411" />
+        <EntityTypeShape EntityType="NobelMoonModel.TicketBooking" Width="1.5" PointX="13.375" PointY="5.75" Height="5.7786363504330325" />
+        <EntityTypeShape EntityType="NobelMoonModel.TicketFlight" Width="1.5" PointX="7.375" PointY="8.75" Height="3.8574022642771411" />
+        <EntityTypeShape EntityType="NobelMoonModel.TourBooking" Width="1.5" PointX="3.375" PointY="12.75" Height="5.8263151041666674" />
+        <EntityTypeShape EntityType="NobelMoonModel.Hotel" Width="1.5" PointX="5.375" PointY="13.75" Height="2.3631090861558945" />
+        <EntityTypeShape EntityType="NobelMoonModel.VisaType" Width="1.5" PointX="9.375" PointY="13.75" Height="2.1496386321385685" />
+        <EntityTypeShape EntityType="NobelMoonModel.PassportBooking" Width="1.5" PointX="13.75" PointY="12.75" Height="4.4978136263291049" />
+        <EntityTypeShape EntityType="NobelMoonModel.PassportRequirement" Width="1.5" PointX="0.75" PointY="15.75" Height="2.7900499941905252" />
+        <EntityTypeShape EntityType="NobelMoonModel.PassportPerson" Width="1.5" PointX="15.375" PointY="4.75" Height="3.8574022642771411" />
+        <EntityTypeShape EntityType="NobelMoonModel.Authorization" Width="1.5" PointX="16.375" PointY="9.75" Height="2.5765795401732134" />
+        <EntityTypeShape EntityType="NobelMoonModel.Company" Width="1.5" PointX="9.375" PointY="16.75" Height="2.7900499941905252" />
+        <EntityTypeShape EntityType="NobelMoonModel.CarType" Width="1.5" PointX="16.375" PointY="13.75" Height="2.3631090861559017" />
+        <EntityTypeShape EntityType="NobelMoonModel.Peroid" Width="1.5" PointX="16.375" PointY="17.75" Height="2.5765795401732134" />
+        <EntityTypeShape EntityType="NobelMoonModel.CarRentalBooking" Width="1.5" PointX="17.375" PointY="0.75" Height="5.5651658964157207" />
+        <EntityTypeShape EntityType="NobelMoonModel.Services" Width="1.5" PointX="18.375" PointY="7.75" Height="2.5765795401732134" />
+        <EntityTypeShape EntityType="NobelMoonModel.RequireLetter" Width="1.5" PointX="18.375" PointY="11.75" Height="2.5765795401732134" />
+        <EntityTypeShape EntityType="NobelMoonModel.ServicesOrRequirement" Width="1.5" PointX="11.375" PointY="18.75" Height="2.7900499941905252" />
+        <EntityTypeShape EntityType="NobelMoonModel.CarRentalDetail" Width="1.5" PointX="5.375" PointY="17.75" Height="3.2169909022251773" />
+        <EntityTypeShape EntityType="NobelMoonModel.PayforCredit" Width="1.5" PointX="13.375" PointY="18.75" Height="3.9033007812500102" />
+        <EntityTypeShape EntityType="NobelMoonModel.IncomeType" Width="1.5" PointX="18.375" PointY="15.75" Height="2.1725878906250102" />
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

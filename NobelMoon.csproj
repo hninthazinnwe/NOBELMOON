@@ -1,0 +1,646 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{2DE15309-C0FA-43C4-9351-3A8DB0B74ABA}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>NobelMoon</RootNamespace>
+    <AssemblyName>NobelMoon</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>logo_HTl_3.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup />
+  <ItemGroup>
+    <Reference Include="crdb_adoplus, Version=14.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Users\User\Downloads\Compressed\crdb_adoplus.dll_2\crdb_adoplus.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net40\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Connection\NobelMoon.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NobelMoon.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\NobelMoon.cs">
+      <DependentUpon>NobelMoon.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DataSets\NobelMoon.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NobelMoon.xsd</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\AirInvoice.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AirInvoice.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Reports\AirTicketHeader.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AirTicketHeader.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Reports\CarRentalHeader.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CarRentalHeader.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Reports\CarRentalInvoice.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CarRentalInvoice.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Reports\CashReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CashReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Reports\HotelBookingHeader.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HotelBookingHeader.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Reports\HotelInvoice.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HotelInvoice.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Reports\PassportHeader.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PassportHeader.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Reports\PassportInvoice.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PassportInvoice.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Reports\PayforCredit.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PayforCredit.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Reports\PayforCreditHistoty.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PayforCreditHistoty.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Reports\TourPackageHeader.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TourPackageHeader.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Reports\TourPackageInvoice.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TourPackageInvoice.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="UI\frmAirTicket.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmAirTicket.Designer.cs">
+      <DependentUpon>frmAirTicket.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frmAirTicketHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmAirTicketHistory.Designer.cs">
+      <DependentUpon>frmAirTicketHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frmAirTicketReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmAirTicketReport.Designer.cs">
+      <DependentUpon>frmAirTicketReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frmAuthorize.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmAuthorize.Designer.cs">
+      <DependentUpon>frmAuthorize.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frmBackOffice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmBackOffice.Designer.cs">
+      <DependentUpon>frmBackOffice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frmCarRental.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmCarRental.Designer.cs">
+      <DependentUpon>frmCarRental.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frmCarRentalList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmCarRentalList.Designer.cs">
+      <DependentUpon>frmCarRentalList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frmCarType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmCarType.Designer.cs">
+      <DependentUpon>frmCarType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frmCashReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmCashReport.Designer.cs">
+      <DependentUpon>frmCashReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frmClass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmClass.Designer.cs">
+      <DependentUpon>frmClass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frmCompany.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmCompany.Designer.cs">
+      <DependentUpon>frmCompany.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frmHotel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmHotel.Designer.cs">
+      <DependentUpon>frmHotel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frmHotelBooking.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmHotelBooking.Designer.cs">
+      <DependentUpon>frmHotelBooking.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frmHotelBookingHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmHotelBookingHistory.Designer.cs">
+      <DependentUpon>frmHotelBookingHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frmIncometype.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmIncometype.designer.cs">
+      <DependentUpon>frmIncometype.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frmLogIn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmLogIn.Designer.cs">
+      <DependentUpon>frmLogIn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmMain.designer.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frmPackage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmPackage.Designer.cs">
+      <DependentUpon>frmPackage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frmPackageType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmPackageType.Designer.cs">
+      <DependentUpon>frmPackageType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frmPassport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmPassport.Designer.cs">
+      <DependentUpon>frmPassport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frmPassportList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmPassportList.Designer.cs">
+      <DependentUpon>frmPassportList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frmPayforCredit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmPayforCredit.Designer.cs">
+      <DependentUpon>frmPayforCredit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frmPayforCreditHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmPayforCreditHistory.Designer.cs">
+      <DependentUpon>frmPayforCreditHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frmPaymentTerm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmPaymentTerm.Designer.cs">
+      <DependentUpon>frmPaymentTerm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frmPeroid.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmPeroid.Designer.cs">
+      <DependentUpon>frmPeroid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frmReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmReport.Designer.cs">
+      <DependentUpon>frmReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frmRequireLetter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmRequireLetter.Designer.cs">
+      <DependentUpon>frmRequireLetter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frmSegment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmSegment.Designer.cs">
+      <DependentUpon>frmSegment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frmRoomType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmRoomType.Designer.cs">
+      <DependentUpon>frmRoomType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frmCurrency.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmCurrency.Designer.cs">
+      <DependentUpon>frmCurrency.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frmServices.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmServices.Designer.cs">
+      <DependentUpon>frmServices.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frmStaff.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmStaff.Designer.cs">
+      <DependentUpon>frmStaff.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frmTourPackage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmTourPackage.Designer.cs">
+      <DependentUpon>frmTourPackage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frmTourPackageList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmTourPackageList.Designer.cs">
+      <DependentUpon>frmTourPackageList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frmUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmUser.Designer.cs">
+      <DependentUpon>frmUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frmVehicalName.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmVehicalName.Designer.cs">
+      <DependentUpon>frmVehicalName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frmVisaType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmVisaType.Designer.cs">
+      <DependentUpon>frmVisaType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Utility\Utility.cs" />
+    <Content Include="logo_HTl_3.ico" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <Content Include="Images\T &amp; T logo1.png" />
+    <Content Include="Logo.ico" />
+    <Content Include="Reports\AirInvoice.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>AirInvoice.cs</LastGenOutput>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reports\AirTicketHeader.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>AirTicketHeader.cs</LastGenOutput>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reports\CarRentalHeader.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CarRentalHeader.cs</LastGenOutput>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reports\CarRentalInvoice.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CarRentalInvoice.cs</LastGenOutput>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reports\CashReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CashReport.cs</LastGenOutput>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reports\HotelBookingHeader.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>HotelBookingHeader.cs</LastGenOutput>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reports\HotelInvoice.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>HotelInvoice.cs</LastGenOutput>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reports\PassportHeader.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>PassportHeader.cs</LastGenOutput>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reports\PassportInvoice.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>PassportInvoice.cs</LastGenOutput>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reports\PayforCredit.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>PayforCredit.cs</LastGenOutput>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reports\PayforCreditHistoty.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>PayforCreditHistoty.cs</LastGenOutput>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reports\TourPackageHeader.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>TourPackageHeader.cs</LastGenOutput>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reports\TourPackageInvoice.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>TourPackageInvoice.cs</LastGenOutput>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <EmbeddedResource Include="UI\frmAirTicket.resx">
+      <DependentUpon>frmAirTicket.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmAirTicketHistory.resx">
+      <DependentUpon>frmAirTicketHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmAirTicketReport.resx">
+      <DependentUpon>frmAirTicketReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmAuthorize.resx">
+      <DependentUpon>frmAuthorize.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmBackOffice.resx">
+      <DependentUpon>frmBackOffice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmCarRental.resx">
+      <DependentUpon>frmCarRental.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmCarRentalList.resx">
+      <DependentUpon>frmCarRentalList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmCarType.resx">
+      <DependentUpon>frmCarType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmCashReport.resx">
+      <DependentUpon>frmCashReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmClass.resx">
+      <DependentUpon>frmClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmCompany.resx">
+      <DependentUpon>frmCompany.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmHotel.resx">
+      <DependentUpon>frmHotel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmHotelBooking.resx">
+      <DependentUpon>frmHotelBooking.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmHotelBookingHistory.resx">
+      <DependentUpon>frmHotelBookingHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmIncometype.resx">
+      <DependentUpon>frmIncometype.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmLogIn.resx">
+      <DependentUpon>frmLogIn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmPackage.resx">
+      <DependentUpon>frmPackage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmPackageType.resx">
+      <DependentUpon>frmPackageType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmPassport.resx">
+      <DependentUpon>frmPassport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmPassportList.resx">
+      <DependentUpon>frmPassportList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmPayforCredit.resx">
+      <DependentUpon>frmPayforCredit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmPayforCreditHistory.resx">
+      <DependentUpon>frmPayforCreditHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmPaymentTerm.resx">
+      <DependentUpon>frmPaymentTerm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmPeroid.resx">
+      <DependentUpon>frmPeroid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmReport.resx">
+      <DependentUpon>frmReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmRequireLetter.resx">
+      <DependentUpon>frmRequireLetter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmSegment.resx">
+      <DependentUpon>frmSegment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmRoomType.resx">
+      <DependentUpon>frmRoomType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmCurrency.resx">
+      <DependentUpon>frmCurrency.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmServices.resx">
+      <DependentUpon>frmServices.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmStaff.resx">
+      <DependentUpon>frmStaff.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmTourPackage.resx">
+      <DependentUpon>frmTourPackage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmTourPackageList.resx">
+      <DependentUpon>frmTourPackageList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmUser.resx">
+      <DependentUpon>frmUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmVehicalName.resx">
+      <DependentUpon>frmVehicalName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmVisaType.resx">
+      <DependentUpon>frmVisaType.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="App.Config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </None>
+    <EntityDeploy Include="Connection\NobelMoon.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>NobelMoon.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="DataSets\NobelMoon.xsc">
+      <DependentUpon>NobelMoon.xsd</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="DataSets\NobelMoon.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>NobelMoon.Designer.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="DataSets\NobelMoon.xss">
+      <DependentUpon>NobelMoon.xsd</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\NobelMoon.Connection.NobelMoonEntities.datasource" />
+    <None Include="Properties\DataSources\NobelMoon.Connection.NobelMoonEntities1.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
